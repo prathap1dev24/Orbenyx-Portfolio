@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORBENYX | Dual Cinematic Scroll Sequence</title>
+  <meta name="description"
+    content="Dual cinematic scroll-driven sequence animation powered by GSAP ScrollTrigger, Lenis Smooth Scroll, and High-Performance HTML5 Canvas." />
+
+  <!-- Modern Studio Typography (Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Orbitron:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-brand">
+        <span class="brand-logo-icon">◈</span>
+        <span class="brand-name">ORBENYX STUDIO</span>
+      </div>
+      <div class="loader-progress-track">
+        <div id="loader-progress-bar" class="loader-progress-bar"></div>
+      </div>
+      <div class="loader-stats">
+        <span id="loader-status">CACHING DUAL SEQUENCES (240 FRAMES)...</span>
+        <span id="loader-percentage">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <a href="#" class="logo">
+      <img src="/OrbenyxLogo.png" alt="Orbenyx Logo" class="nav-logo-img" />
+      <span class="logo-text">ORBENYX</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#sequence-container-1">Home</a>
+      <a href="#white-studio-page">Works</a>
+      <a href="#sequence-container-2">Capabilities</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#sequence-container-2" class="btn-talk">Explore</a>
+    </div>
+  </header>
+
+  <!-- Main Scroll Container -->
+  <main>
+
+    <!-- ===================================================================
+         SEQUENCE 1: LOGO EXPLODE / FRAGMENT SEQUENCE
+         =================================================================== -->
+    <section id="sequence-container-1" class="sequence-section">
+      <div class="canvas-sticky-wrapper">
+        <canvas id="sequence-canvas-1"></canvas>
+        <canvas id="sequence-particles-canvas" class="sequence-particles-overlay"></canvas>
+
+        <!-- Top Left Hero Group: Static "Engineered for", Animated word below, CTAs below -->
+        <div class="hero-top-left-group" id="hero-top-left-group">
+          <div class="hero-headline-block">
+            <span class="static-prefix">Engineered for</span>
+            <span class="dynamic-word-wrapper">
+              <span id="dynamic-animated-word" class="dynamic-word underlined">what’s next</span>
+            </span>
+          </div>
+
+          <!-- CTAs directly below the Engineered texts -->
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn-hero primary">
+              <span>Start Project</span>
+              <span class="btn-arrow">↗</span>
+            </a>
+            <a href="#contact" class="btn-hero glass">
+              <span>Book Meeting</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Bottom Studio Information Group -->
+        <div class="hero-bottom-right-group" id="hero-bottom-right-group">
+          <h2 class="studio-headline">A Technology & Digital Studio</h2>
+          <ul class="studio-services-list">
+            <li class="service-item">Digital Products</li>
+            <li class="service-item">Intelligent Systems</li>
+            <li class="service-item">Future Ready Experiences</li>
+          </ul>
+        </div>
+
+        <!-- Sequence 1 Letter-by-Letter Manifesto Reveal -->
+        <div class="manifesto-reveal-container" id="manifesto-reveal-container">
+          <p class="manifesto-text" id="manifesto-letter-text">
+            Orbenyx is an independent digital studio crafting meaningful brand experiences through strategy, design, and
+            technology.
+          </p>
+        </div>
+
+        <!-- Vertical Strips Page Transition to White Screen (Triggers after last frame) -->
+        <div class="vertical-strips-transition" id="vertical-strips-transition">
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+        </div>
+
+        <!-- Who We Are Split Overlay (Appears directly upon the white strips after screen is covered) -->
+        <div class="strips-overlay-container" id="strips-who-we-are-overlay">
+          <div class="white-split-container">
+
+            <!-- Left Section (50%): Centered "Who & What We Are" -->
+            <div class="white-split-left" id="white-split-left">
+              <div class="split-left-center-content" id="split-left-content">
+                <span class="white-studio-tag">◈ ABOUT US</span>
+                <h2 class="split-headline centered-headline">Who & What<br /><span class="split-headline-dark">We
+                    Are.</span></h2>
+              </div>
+            </div>
+
+            <!-- Center Shorter Vertical Line (Does not touch top or bottom boundaries) -->
+            <div class="white-split-divider" id="white-split-divider" aria-hidden="true"></div>
+
+            <!-- Right Section (50%): Corresponding Visual & Supporting Content -->
+            <div class="white-split-right" id="white-split-right">
+
+              <!-- 3 Ethos / Principle Cards -->
+              <div class="split-cards-stack" id="split-cards-stack">
+
+                <!-- Card 01 -->
+                <div class="split-cap-card" id="split-card-1">
+                  <div class="split-card-top">
+                    <span class="split-card-tag">CURIOUS BY NATURE</span>
+                  </div>
+                  <div class="cap-card-info">
+                    <h4 class="split-card-title">We Question More.</h4>
+                    <p class="split-card-desc" id="split-desc-1">We challenge the obvious, explore new possibilities,
+                      and turn thoughtful questions into better ideas.</p>
+                  </div>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="split-cap-card dark-accent" id="split-card-2">
+                  <div class="split-card-top">
+                    <span class="split-card-tag">INTENTIONAL BY DESIGN</span>
+                  </div>
+                  <div class="cap-card-info">
+                    <h4 class="split-card-title">Nothing Without Purpose.</h4>
+                    <p class="split-card-desc" id="split-desc-2">Every detail has a reason — from the first idea to the
+                      smallest interaction, we design with clarity and intention.</p>
+                  </div>
+                </div>
+
+                <!-- Card 03 -->
+                <div class="split-cap-card" id="split-card-3">
+                  <div class="split-card-top">
+                    <span class="split-card-tag">BUILT TO EVOLVE</span>
+                  </div>
+                  <div class="cap-card-info">
+                    <h4 class="split-card-title">Never Standing Still.</h4>
+                    <p class="split-card-desc" id="split-desc-3">We create with tomorrow in mind, building ideas that
+                      adapt, grow, and stay relevant as the world moves forward.</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         WHITE STUDIO PAGE: WORK & EXPLORATIONS HORIZONTAL GALLERY
+         (Between Strips/Sequence 1 & Rock Component/Sequence 2)
+         =================================================================== -->
+    <section class="white-studio-page" id="white-studio-page">
+      <div class="works-split-viewport" id="works-split-viewport">
+
+        <!-- Left Static / Gliding Section: Work & Explorations -->
+        <div class="works-split-left" id="works-split-left">
+          <div class="works-left-content" id="works-left-content">
+            <h2 class="works-headline">
+              Work &<br />
+              <span class="works-headline-dark">Explorations.</span>
+            </h2>
+          </div>
+        </div>
+
+        <!-- Center Straight Vertical Line -->
+        <div class="works-split-divider" id="works-split-divider" aria-hidden="true"></div>
+
+        <!-- Right Section / Horizontal Cards Track -->
+        <div class="works-split-right" id="works-split-right">
+          <div class="works-cards-stream" id="works-cards-stream">
+
+            <!-- Card 01 -->
+            <article class="work-project-card" id="work-card-1">
+              <div class="work-card-inner">
+                <div class="work-card-visual card-visual-1">
+                  <div class="work-card-badge">01 // FLAGSHIP PLATFORM</div>
+                  <div class="work-card-art">
+                    <div class="art-glow cyan"></div>
+                    <div class="art-grid-lines"></div>
+                    <div class="art-floating-element">
+                      <span class="art-code">CHRONO.SYS</span>
+                      <span class="art-status">120 FPS // REAL-TIME</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-card-details">
+                  <div class="work-card-header">
+                    <span class="work-card-cat">Kinetic WebGL // Brand Universe</span>
+                    <span class="work-card-year">2026</span>
+                  </div>
+                  <h3 class="work-card-title">Chrono Genesis</h3>
+                  <p class="work-card-desc">Sub-pixel canvas orchestration and interactive 3D particle kinematics for a next-generation timepiece atelier.</p>
+                  <div class="work-card-tags">
+                    <span class="w-tag">Three.js</span>
+                    <span class="w-tag">WebGL</span>
+                    <span class="w-tag">GLSL Shaders</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Divider Between Card 01 and Card 02 -->
+            <div class="work-card-divider" aria-hidden="true"></div>
+
+            <!-- Card 02 -->
+            <article class="work-project-card" id="work-card-2">
+              <div class="work-card-inner">
+                <div class="work-card-visual card-visual-2">
+                  <div class="work-card-badge">02 // SPATIAL INTERFACE</div>
+                  <div class="work-card-art">
+                    <div class="art-glow violet"></div>
+                    <div class="art-grid-lines"></div>
+                    <div class="art-floating-element">
+                      <span class="art-code">AETHERIA.OS</span>
+                      <span class="art-status">SPATIAL UI</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-card-details">
+                  <div class="work-card-header">
+                    <span class="work-card-cat">Spatial Computing // Design System</span>
+                    <span class="work-card-year">2026</span>
+                  </div>
+                  <h3 class="work-card-title">Aetheria OS</h3>
+                  <p class="work-card-desc">Fluid depth-mapping interface and tactile micro-interactions built for immersive vision-based hardware.</p>
+                  <div class="work-card-tags">
+                    <span class="w-tag">Spatial UI</span>
+                    <span class="w-tag">WebXR</span>
+                    <span class="w-tag">Kinetic Physics</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Divider Between Card 02 and Card 03 -->
+            <div class="work-card-divider" aria-hidden="true"></div>
+
+            <!-- Card 03 -->
+            <article class="work-project-card" id="work-card-3">
+              <div class="work-card-inner">
+                <div class="work-card-visual card-visual-3">
+                  <div class="work-card-badge">03 // INTELLIGENT SUITE</div>
+                  <div class="work-card-art">
+                    <div class="art-glow amber"></div>
+                    <div class="art-grid-lines"></div>
+                    <div class="art-floating-element">
+                      <span class="art-code">NEURAL.PULSE</span>
+                      <span class="art-status">AI-STUDIO</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-card-details">
+                  <div class="work-card-header">
+                    <span class="work-card-cat">Generative Audio // Neural Tooling</span>
+                    <span class="work-card-year">2025</span>
+                  </div>
+                  <h3 class="work-card-title">Neural Pulse</h3>
+                  <p class="work-card-desc">AI-augmented creative workspace transforming acoustic waveforms into live procedural geometries in real-time.</p>
+                  <div class="work-card-tags">
+                    <span class="w-tag">WebAudio</span>
+                    <span class="w-tag">TensorFlow.js</span>
+                    <span class="w-tag">Canvas 2D</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Divider Between Card 03 and Card 04 -->
+            <div class="work-card-divider" aria-hidden="true"></div>
+
+            <!-- Card 04 -->
+            <article class="work-project-card" id="work-card-4">
+              <div class="work-card-inner">
+                <div class="work-card-visual card-visual-4">
+                  <div class="work-card-badge">04 // KINETIC MOTORING</div>
+                  <div class="work-card-art">
+                    <div class="art-glow emerald"></div>
+                    <div class="art-grid-lines"></div>
+                    <div class="art-floating-element">
+                      <span class="art-code">VELOCE.KINETIC</span>
+                      <span class="art-status">HYPER-CAR 3D</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-card-details">
+                  <div class="work-card-header">
+                    <span class="work-card-cat">Digital Twin // Configurator</span>
+                    <span class="work-card-year">2025</span>
+                  </div>
+                  <h3 class="work-card-title">Veloce Kinetic</h3>
+                  <p class="work-card-desc">Photorealistic real-time raytraced vehicle configurator delivering seamless 60 FPS transitions across all viewports.</p>
+                  <div class="work-card-tags">
+                    <span class="w-tag">WebGL 2.0</span>
+                    <span class="w-tag">PBR Materials</span>
+                    <span class="w-tag">GPU Instancing</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Divider Between Card 04 and Card 05 -->
+            <div class="work-card-divider" aria-hidden="true"></div>
+
+            <!-- Card 05: Explore Projects CTA Card -->
+            <article class="work-project-card work-cta-card" id="work-card-5">
+              <div class="work-card-inner cta-card-inner">
+                <div class="work-card-visual card-visual-cta">
+                  <div class="work-card-badge">INDEX // 2024–2026</div>
+                  <div class="art-glow cyan cta-glow"></div>
+                  <div class="art-grid-lines"></div>
+                  <div class="cta-giant-arrow-wrap">
+                    <span class="cta-giant-arrow">↗</span>
+                  </div>
+                </div>
+                <div class="work-card-details cta-details">
+                  <div class="work-card-header">
+                    <span class="work-card-cat">Complete Studio Index</span>
+                    <span class="work-card-year">28+ Works</span>
+                  </div>
+                  <h3 class="work-card-title">Explore Projects</h3>
+                  <p class="work-card-desc">Discover our comprehensive collection of client flagships, experimental labs, and digital innovations.</p>
+                  <div class="cta-actions-wrap">
+                    <a href="#contact" class="btn-explore-projects">
+                      <span>Browse Full Archive</span>
+                      <span class="btn-arrow">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SEQUENCE 2: ROCK CARVING LOGO REVEAL (MONOLITH)
+         =================================================================== -->
+    <section id="sequence-container-2" class="sequence-section">
+      <div class="canvas-sticky-wrapper">
+        <canvas id="sequence-canvas-2"></canvas>
+
+        <!-- Centered Core Disciplines (DESIGN, DEVELOPMENT, BRANDING) -->
+        <div class="rock-center-disciplines" id="rock-center-disciplines">
+          <span class="rock-discipline-word">DESIGN</span>
+          <span class="rock-discipline-word">DEVELOPMENT</span>
+          <span class="rock-discipline-word">BRANDING</span>
+        </div>
+
+        <!-- Sequence 2 Capabilities Flow (6 Cards Triggered at Frame 29) -->
+        <div class="rock-capabilities-overlay" id="rock-capabilities-overlay">
+          
+          <!-- Pair 1: Mobile Development & Web Development -->
+          <div class="rock-cap-card cap-left" id="rock-cap-1">
+            <h3 class="rock-cap-title">Mobile Development</h3>
+            <p class="rock-cap-desc">High-performance iOS & Android systems crafted with sub-pixel fluid interactions.</p>
+          </div>
+
+          <div class="rock-cap-card cap-right" id="rock-cap-2">
+            <h3 class="rock-cap-title">Web Development</h3>
+            <p class="rock-cap-desc">WebGL-powered interactive flagships, headless architectures, and scalable cloud stacks.</p>
+          </div>
+
+          <!-- Pair 2: Custom Software & SaaS Products -->
+          <div class="rock-cap-card cap-left" id="rock-cap-3">
+            <h3 class="rock-cap-title">Custom Software</h3>
+            <p class="rock-cap-desc">Bespoke backend microservices, resilient APIs, and enterprise operational infrastructure.</p>
+          </div>
+
+          <div class="rock-cap-card cap-right" id="rock-cap-4">
+            <h3 class="rock-cap-title">SaaS Products</h3>
+            <p class="rock-cap-desc">Full-cycle software platforms engineered for multi-tenant scale, security, and velocity.</p>
+          </div>
+
+          <!-- Pair 3: AI Automation & Digital Marketing -->
+          <div class="rock-cap-card cap-left" id="rock-cap-5">
+            <h3 class="rock-cap-title">AI Automation</h3>
+            <p class="rock-cap-desc">Autonomous LLM pipelines, predictive algorithmic models, and intelligent agent tooling.</p>
+          </div>
+
+          <div class="rock-cap-card cap-right" id="rock-cap-6">
+            <h3 class="rock-cap-title">Digital Marketing</h3>
+            <p class="rock-cap-desc">Data-driven performance campaigns, brand positioning, and algorithmic growth loops.</p>
+          </div>
+
+        </div>
+
+        <!-- Vertical White Transition Strips after Rock Sequence -->
+        <div class="vertical-transition-strips" id="vertical-transition-strips-2" aria-hidden="true">
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+          <div class="vertical-strip-panel"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Main Application Script -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
