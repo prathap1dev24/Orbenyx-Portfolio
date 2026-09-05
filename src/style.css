@@ -3263,14 +3263,6 @@ body {
   width: fit-content;
 }
 
-.cookie-badge-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--c-warm-taupe);
-  box-shadow: 0 0 6px rgba(204, 197, 185, 0.6);
-}
-
 .cookie-badge-text {
   font-family: var(--font-tech);
   font-size: 0.64rem;
