@@ -188,6 +188,8 @@ async function checkManifests() {
   } catch (e) { }
 }
 
+const CACHE_NAME = 'orbenyx-sequence-cache-v1';
+
 async function preloadAllSequences() {
   await checkManifests();
 
@@ -196,33 +198,77 @@ async function preloadAllSequences() {
 
   if (statusText) statusText.textContent = 'LOADING...';
 
-  const loadSequence = (seqConfig, seqState, seqNum) => {
-    return new Promise((resolve) => {
-      let loaded = 0;
-      for (let i = 0; i < seqConfig.frameCount; i++) {
-        const img = new Image();
-        img.src = seqConfig.pattern(i + 1);
-        img.onload = () => {
-          seqState.images[i] = img;
-          loaded++;
-          totalLoaded++;
-          updateLoaderUI(totalLoaded / totalFrames);
-          if (loaded === seqConfig.frameCount) resolve();
-        };
-        img.onerror = () => {
-          seqState.images[i] = img;
-          loaded++;
-          totalLoaded++;
-          updateLoaderUI(totalLoaded / totalFrames);
-          if (loaded === seqConfig.frameCount) resolve();
-        };
+  let frameCache = null;
+  try {
+    if ('caches' in window) {
+      frameCache = await caches.open(CACHE_NAME);
+    }
+  } catch (err) {
+    console.warn('Cache API unavailable, fallback to memory cache:', err);
+  }
+
+  const loadFrame = async (url) => {
+    try {
+      if (frameCache) {
+        const cached = await frameCache.match(url);
+        if (cached) {
+          const blob = await cached.blob();
+          const img = new Image();
+          img.src = URL.createObjectURL(blob);
+          await img.decode().catch(() => {});
+          return img;
+        }
       }
+
+      const res = await fetch(url, { cache: 'force-cache' });
+      if (res.ok) {
+        if (frameCache) {
+          try {
+            await frameCache.put(url, res.clone());
+          } catch (e) {}
+        }
+        const blob = await res.blob();
+        const img = new Image();
+        img.src = URL.createObjectURL(blob);
+        await img.decode().catch(() => {});
+        return img;
+      }
+    } catch (e) {}
+
+    // Fallback standard image load
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(img);
     });
   };
 
+  const loadSequence = async (seqConfig, seqState) => {
+    let index = 0;
+    const concurrencyLimit = 16;
+
+    const worker = async () => {
+      while (index < seqConfig.frameCount) {
+        const i = index++;
+        const url = seqConfig.pattern(i + 1);
+        const img = await loadFrame(url);
+        seqState.images[i] = img;
+        totalLoaded++;
+        updateLoaderUI(totalLoaded / totalFrames);
+      }
+    };
+
+    const workers = [];
+    for (let w = 0; w < concurrencyLimit; w++) {
+      workers.push(worker());
+    }
+    await Promise.all(workers);
+  };
+
   await Promise.all([
-    loadSequence(CONFIG.seq1, state.seq1, 1),
-    loadSequence(CONFIG.seq2, state.seq2, 2)
+    loadSequence(CONFIG.seq1, state.seq1),
+    loadSequence(CONFIG.seq2, state.seq2)
   ]);
 
   finishLoading();
@@ -1126,6 +1172,35 @@ function initNavigationScrollHandlers() {
 }
 
 /* ==========================================================================
+   COOKIE & CACHE CONSENT LOGIC
+   ========================================================================== */
+function initCookieConsent() {
+  const banner = document.getElementById('cookie-consent-banner');
+  const btnAccept = document.getElementById('btn-cookie-accept');
+  const btnDeny = document.getElementById('btn-cookie-deny');
+
+  if (!banner || !btnAccept || !btnDeny) return;
+
+  const savedConsent = localStorage.getItem('orbenyx_cookie_consent');
+  if (!savedConsent) {
+    // Reveal banner seamlessly after preloader finishes or short delay
+    setTimeout(() => {
+      banner.classList.add('visible');
+    }, 1200);
+  }
+
+  const handleConsent = (choice) => {
+    try {
+      localStorage.setItem('orbenyx_cookie_consent', choice);
+    } catch (e) {}
+    banner.classList.remove('visible');
+  };
+
+  btnAccept.addEventListener('click', () => handleConsent('accepted'));
+  btnDeny.addEventListener('click', () => handleConsent('denied'));
+}
+
+/* ==========================================================================
    INITIALIZE ON PAGE LOAD
    ========================================================================== */
 window.addEventListener('DOMContentLoaded', () => {
@@ -1137,4 +1212,5 @@ window.addEventListener('DOMContentLoaded', () => {
   initParticleShowcase();
   initMobileNavigation();
   initNavigationScrollHandlers();
+  initCookieConsent();
 });
