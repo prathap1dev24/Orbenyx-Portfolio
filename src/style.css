@@ -3253,7 +3253,31 @@ body {
 .cookie-banner-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+}
+
+.cookie-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+}
+
+.cookie-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c-warm-taupe);
+  box-shadow: 0 0 6px rgba(204, 197, 185, 0.6);
+}
+
+.cookie-badge-text {
+  font-family: var(--font-tech);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--c-warm-taupe);
+  text-transform: uppercase;
 }
 
 .cookie-text-stack {

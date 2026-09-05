@@ -1059,16 +1059,6 @@ function initHeroSequenceParticles() {
   }
 }
 
-function initParticleShowcase() {
-  const canvas1 = document.getElementById('particle-canvas-1');
-  const canvas2 = document.getElementById('particle-canvas-2');
-  const canvas3 = document.getElementById('particle-canvas-3');
-
-  if (canvas1) new ParticleSystem(canvas1, 'cyber-dust');
-  if (canvas2) new ParticleSystem(canvas2, 'constellation');
-  if (canvas3) new ParticleSystem(canvas3, 'spark-burst');
-}
-
 function scrollToTargetSection(target) {
   if (!target) return;
 
@@ -1209,7 +1199,6 @@ window.addEventListener('DOMContentLoaded', () => {
   preloadAllSequences();
   initRotatingWords();
   initHeroSequenceParticles();
-  initParticleShowcase();
   initMobileNavigation();
   initNavigationScrollHandlers();
   initCookieConsent();
