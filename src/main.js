@@ -1023,6 +1023,62 @@ function initParticleShowcase() {
   if (canvas3) new ParticleSystem(canvas3, 'spark-burst');
 }
 
+function scrollToTargetSection(target) {
+  if (!target) return;
+
+  if (target === '#sequence-container-1' || target === '#home' || target === '#') {
+    if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  if (target === '#who-we-are' || target === '#about' || target === '#about-us') {
+    const allTriggers = ScrollTrigger.getAll();
+    const st1 = allTriggers.find(st => st.trigger && (st.trigger.id === 'sequence-container-1' || st.trigger === document.getElementById('sequence-container-1')));
+    if (st1) {
+      const targetScroll = st1.start + (st1.end - st1.start) * 0.42;
+      if (lenis) lenis.scrollTo(targetScroll, { duration: 1.4 });
+      else window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    }
+    return;
+  }
+
+  if (target === '#sequence-container-2' || target === '#services') {
+    const allTriggers = ScrollTrigger.getAll();
+    const st2 = allTriggers.find(st => st.trigger && (st.trigger.id === 'sequence-container-2' || st.trigger === document.getElementById('sequence-container-2')));
+    if (st2) {
+      if (lenis) lenis.scrollTo(st2.start, { duration: 1.4 });
+      else window.scrollTo({ top: st2.start, behavior: 'smooth' });
+    } else {
+      const el = document.getElementById('sequence-container-2');
+      if (el) {
+        if (lenis) lenis.scrollTo(el, { duration: 1.4 });
+        else el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    return;
+  }
+
+  if (target === '#consultation' || target === '#contact' || target === '#talk') {
+    const el = document.getElementById('consultation');
+    if (el) {
+      if (lenis) lenis.scrollTo(el, { duration: 1.4 });
+      else el.scrollIntoView({ behavior: 'smooth' });
+    }
+    return;
+  }
+
+  try {
+    const el = document.querySelector(target);
+    if (el) {
+      if (lenis) lenis.scrollTo(el, { duration: 1.2 });
+      else el.scrollIntoView({ behavior: 'smooth' });
+    }
+  } catch (err) {
+    // Ignore invalid selector
+  }
+}
+
 function initMobileNavigation() {
   const hamburger = document.getElementById('nav-hamburger');
   const overlay = document.getElementById('mobile-nav-overlay');
@@ -1056,6 +1112,19 @@ function initMobileNavigation() {
   });
 }
 
+function initNavigationScrollHandlers() {
+  const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav-link, .btn-talk, .footer-nav-list a, .footer-links a');
+  allNavLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        scrollToTargetSection(href);
+      }
+    });
+  });
+}
+
 /* ==========================================================================
    INITIALIZE ON PAGE LOAD
    ========================================================================== */
@@ -1067,4 +1136,5 @@ window.addEventListener('DOMContentLoaded', () => {
   initHeroSequenceParticles();
   initParticleShowcase();
   initMobileNavigation();
+  initNavigationScrollHandlers();
 });
