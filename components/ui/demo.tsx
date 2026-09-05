@@ -1,5 +1,11 @@
-import { Bookademo3 } from "@/components/ui/book-a-demo-3";
+import { Footer } from "@/components/ui/large-name-footer";
 
-export default function DemoOne() {
-  return <Bookademo3 />;
+function FooterDemo() {
+  return (
+    <div className="block">
+      <Footer />
+    </div>
+  );
 }
+
+export { FooterDemo };
