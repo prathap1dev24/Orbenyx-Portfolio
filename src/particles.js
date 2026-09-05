@@ -97,7 +97,7 @@ export class ParticleSystem {
         alpha: Math.random() * 0.7 + 0.25,
         depth: Math.random() * 0.8 + 0.2,
         pulseSpeed: Math.random() * 0.02 + 0.01,
-        color: Math.random() > 0.3 ? '#00f0ff' : '#a855f7'
+        color: Math.random() > 0.3 ? '#ffffff' : '#ccc5b9'
       };
     }
 
@@ -109,7 +109,7 @@ export class ParticleSystem {
         vx: (Math.random() - 0.5) * 0.7,
         vy: (Math.random() - 0.5) * 0.7,
         alpha: Math.random() * 0.55 + 0.3,
-        color: Math.random() > 0.4 ? '#00f0ff' : '#ffffff'
+        color: Math.random() > 0.4 ? '#ccc5b9' : '#ffffff'
       };
     }
 
@@ -126,7 +126,7 @@ export class ParticleSystem {
         life: isBurst ? 1.0 : Math.random() * 0.8 + 0.2,
         decay: isBurst ? Math.random() * 0.02 + 0.012 : 0,
         alpha: Math.random() * 0.8 + 0.2,
-        color: ['#00f0ff', '#ffffff', '#a855f7', '#f59e0b'][Math.floor(Math.random() * 4)]
+        color: ['#ffffff', '#fdfcf8', '#ccc5b9', '#8a7f7a'][Math.floor(Math.random() * 4)]
       };
     }
   }
@@ -200,7 +200,7 @@ export class ParticleSystem {
             this.ctx.beginPath();
             this.ctx.moveTo(p1.x, p1.y);
             this.ctx.lineTo(p2.x, p2.y);
-            this.ctx.strokeStyle = '#00f0ff';
+            this.ctx.strokeStyle = 'rgba(204, 197, 185, 0.4)';
             this.ctx.globalAlpha = (1 - dist / maxDist) * (this.options.isOverlay ? 0.22 : 0.28);
             this.ctx.lineWidth = 0.8;
             this.ctx.stroke();

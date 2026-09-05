@@ -50,8 +50,26 @@
     </nav>
     <div class="header-actions">
       <a href="#sequence-container-2" class="btn-talk">Explore</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile Navigation Drawer / Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <nav class="mobile-nav-links">
+      <a href="#sequence-container-1" class="mobile-nav-link">Home</a>
+      <a href="#white-studio-page" class="mobile-nav-link">Works</a>
+      <a href="#sequence-container-2" class="mobile-nav-link">Capabilities</a>
+      <a href="#consultation" class="mobile-nav-link">Contact</a>
+    </nav>
+    <div class="mobile-nav-footer">
+      <span>&copy; 2026 ORBENYX STUDIO</span>
+    </div>
+  </div>
 
   <!-- Main Scroll Container -->
   <main>
@@ -187,187 +205,182 @@
          =================================================================== -->
     <section class="white-studio-page" id="white-studio-page">
       <div class="works-split-viewport" id="works-split-viewport">
+        <div class="works-cards-stream" id="works-cards-stream">
 
-        <!-- Left Static / Gliding Section: Work & Explorations -->
-        <div class="works-split-left" id="works-split-left">
-          <div class="works-left-content" id="works-left-content">
-            <h2 class="works-headline">
-              Work &<br />
-              <span class="works-headline-dark">Explorations.</span>
-            </h2>
+          <!-- Left Intro Section: Work & Explorations -->
+          <div class="works-split-left" id="works-split-left">
+            <div class="works-left-content" id="works-left-content">
+              <h2 class="works-headline">
+                Work &<br />
+                <span class="works-headline-dark">Explorations.</span>
+              </h2>
+            </div>
           </div>
-        </div>
 
-        <!-- Center Straight Vertical Line -->
-        <div class="works-split-divider" id="works-split-divider" aria-hidden="true"></div>
+          <!-- Divider Between Intro and Card 01 -->
+          <div class="works-split-divider" id="works-split-divider" aria-hidden="true"></div>
 
-        <!-- Right Section / Horizontal Cards Track -->
-        <div class="works-split-right" id="works-split-right">
-          <div class="works-cards-stream" id="works-cards-stream">
-
-            <!-- Card 01 -->
-            <article class="work-project-card" id="work-card-1">
-              <div class="work-card-inner">
-                <div class="work-card-visual card-visual-1">
-                  <div class="work-card-badge">01 // FLAGSHIP PLATFORM</div>
-                  <div class="work-card-art">
-                    <div class="art-glow cyan"></div>
-                    <div class="art-grid-lines"></div>
-                    <div class="art-floating-element">
-                      <span class="art-code">CHRONO.SYS</span>
-                      <span class="art-status">120 FPS // REAL-TIME</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-card-details">
-                  <div class="work-card-header">
-                    <span class="work-card-cat">Kinetic WebGL // Brand Universe</span>
-                    <span class="work-card-year">2026</span>
-                  </div>
-                  <h3 class="work-card-title">Chrono Genesis</h3>
-                  <p class="work-card-desc">Sub-pixel canvas orchestration and interactive 3D particle kinematics for a next-generation timepiece atelier.</p>
-                  <div class="work-card-tags">
-                    <span class="w-tag">Three.js</span>
-                    <span class="w-tag">WebGL</span>
-                    <span class="w-tag">GLSL Shaders</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Divider Between Card 01 and Card 02 -->
-            <div class="work-card-divider" aria-hidden="true"></div>
-
-            <!-- Card 02 -->
-            <article class="work-project-card" id="work-card-2">
-              <div class="work-card-inner">
-                <div class="work-card-visual card-visual-2">
-                  <div class="work-card-badge">02 // SPATIAL INTERFACE</div>
-                  <div class="work-card-art">
-                    <div class="art-glow violet"></div>
-                    <div class="art-grid-lines"></div>
-                    <div class="art-floating-element">
-                      <span class="art-code">AETHERIA.OS</span>
-                      <span class="art-status">SPATIAL UI</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-card-details">
-                  <div class="work-card-header">
-                    <span class="work-card-cat">Spatial Computing // Design System</span>
-                    <span class="work-card-year">2026</span>
-                  </div>
-                  <h3 class="work-card-title">Aetheria OS</h3>
-                  <p class="work-card-desc">Fluid depth-mapping interface and tactile micro-interactions built for immersive vision-based hardware.</p>
-                  <div class="work-card-tags">
-                    <span class="w-tag">Spatial UI</span>
-                    <span class="w-tag">WebXR</span>
-                    <span class="w-tag">Kinetic Physics</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Divider Between Card 02 and Card 03 -->
-            <div class="work-card-divider" aria-hidden="true"></div>
-
-            <!-- Card 03 -->
-            <article class="work-project-card" id="work-card-3">
-              <div class="work-card-inner">
-                <div class="work-card-visual card-visual-3">
-                  <div class="work-card-badge">03 // INTELLIGENT SUITE</div>
-                  <div class="work-card-art">
-                    <div class="art-glow amber"></div>
-                    <div class="art-grid-lines"></div>
-                    <div class="art-floating-element">
-                      <span class="art-code">NEURAL.PULSE</span>
-                      <span class="art-status">AI-STUDIO</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-card-details">
-                  <div class="work-card-header">
-                    <span class="work-card-cat">Generative Audio // Neural Tooling</span>
-                    <span class="work-card-year">2025</span>
-                  </div>
-                  <h3 class="work-card-title">Neural Pulse</h3>
-                  <p class="work-card-desc">AI-augmented creative workspace transforming acoustic waveforms into live procedural geometries in real-time.</p>
-                  <div class="work-card-tags">
-                    <span class="w-tag">WebAudio</span>
-                    <span class="w-tag">TensorFlow.js</span>
-                    <span class="w-tag">Canvas 2D</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Divider Between Card 03 and Card 04 -->
-            <div class="work-card-divider" aria-hidden="true"></div>
-
-            <!-- Card 04 -->
-            <article class="work-project-card" id="work-card-4">
-              <div class="work-card-inner">
-                <div class="work-card-visual card-visual-4">
-                  <div class="work-card-badge">04 // KINETIC MOTORING</div>
-                  <div class="work-card-art">
-                    <div class="art-glow emerald"></div>
-                    <div class="art-grid-lines"></div>
-                    <div class="art-floating-element">
-                      <span class="art-code">VELOCE.KINETIC</span>
-                      <span class="art-status">HYPER-CAR 3D</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-card-details">
-                  <div class="work-card-header">
-                    <span class="work-card-cat">Digital Twin // Configurator</span>
-                    <span class="work-card-year">2025</span>
-                  </div>
-                  <h3 class="work-card-title">Veloce Kinetic</h3>
-                  <p class="work-card-desc">Photorealistic real-time raytraced vehicle configurator delivering seamless 60 FPS transitions across all viewports.</p>
-                  <div class="work-card-tags">
-                    <span class="w-tag">WebGL 2.0</span>
-                    <span class="w-tag">PBR Materials</span>
-                    <span class="w-tag">GPU Instancing</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Divider Between Card 04 and Card 05 -->
-            <div class="work-card-divider" aria-hidden="true"></div>
-
-            <!-- Card 05: Explore Projects CTA Card -->
-            <article class="work-project-card work-cta-card" id="work-card-5">
-              <div class="work-card-inner cta-card-inner">
-                <div class="work-card-visual card-visual-cta">
-                  <div class="work-card-badge">INDEX // 2024–2026</div>
-                  <div class="art-glow cyan cta-glow"></div>
+          <!-- Card 01 -->
+          <article class="work-project-card" id="work-card-1">
+            <div class="work-card-inner">
+              <div class="work-card-visual card-visual-1">
+                <div class="work-card-badge">01 // FLAGSHIP PLATFORM</div>
+                <div class="work-card-art">
+                  <div class="art-glow cyan"></div>
                   <div class="art-grid-lines"></div>
-                  <div class="cta-giant-arrow-wrap">
-                    <span class="cta-giant-arrow">↗</span>
-                  </div>
-                </div>
-                <div class="work-card-details cta-details">
-                  <div class="work-card-header">
-                    <span class="work-card-cat">Complete Studio Index</span>
-                    <span class="work-card-year">28+ Works</span>
-                  </div>
-                  <h3 class="work-card-title">Explore Projects</h3>
-                  <p class="work-card-desc">Discover our comprehensive collection of client flagships, experimental labs, and digital innovations.</p>
-                  <div class="cta-actions-wrap">
-                    <a href="#contact" class="btn-explore-projects">
-                      <span>Browse Full Archive</span>
-                      <span class="btn-arrow">↗</span>
-                    </a>
+                  <div class="art-floating-element">
+                    <span class="art-code">CHRONO.SYS</span>
+                    <span class="art-status">120 FPS // REAL-TIME</span>
                   </div>
                 </div>
               </div>
-            </article>
+              <div class="work-card-details">
+                <div class="work-card-header">
+                  <span class="work-card-cat">Kinetic WebGL // Brand Universe</span>
+                  <span class="work-card-year">2026</span>
+                </div>
+                <h3 class="work-card-title">Chrono Genesis</h3>
+                <p class="work-card-desc">Sub-pixel canvas orchestration and interactive 3D particle kinematics for a next-generation timepiece atelier.</p>
+                <div class="work-card-tags">
+                  <span class="w-tag">Three.js</span>
+                  <span class="w-tag">WebGL</span>
+                  <span class="w-tag">GLSL Shaders</span>
+                </div>
+              </div>
+            </div>
+          </article>
 
-          </div>
+          <!-- Divider Between Card 01 and Card 02 -->
+          <div class="work-card-divider" aria-hidden="true"></div>
+
+          <!-- Card 02 -->
+          <article class="work-project-card" id="work-card-2">
+            <div class="work-card-inner">
+              <div class="work-card-visual card-visual-2">
+                <div class="work-card-badge">02 // SPATIAL INTERFACE</div>
+                <div class="work-card-art">
+                  <div class="art-glow violet"></div>
+                  <div class="art-grid-lines"></div>
+                  <div class="art-floating-element">
+                    <span class="art-code">AETHERIA.OS</span>
+                    <span class="art-status">SPATIAL UI</span>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-details">
+                <div class="work-card-header">
+                  <span class="work-card-cat">Spatial Computing // Design System</span>
+                  <span class="work-card-year">2026</span>
+                </div>
+                <h3 class="work-card-title">Aetheria OS</h3>
+                <p class="work-card-desc">Fluid depth-mapping interface and tactile micro-interactions built for immersive vision-based hardware.</p>
+                <div class="work-card-tags">
+                  <span class="w-tag">Spatial UI</span>
+                  <span class="w-tag">WebXR</span>
+                  <span class="w-tag">Kinetic Physics</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Divider Between Card 02 and Card 03 -->
+          <div class="work-card-divider" aria-hidden="true"></div>
+
+          <!-- Card 03 -->
+          <article class="work-project-card" id="work-card-3">
+            <div class="work-card-inner">
+              <div class="work-card-visual card-visual-3">
+                <div class="work-card-badge">03 // INTELLIGENT SUITE</div>
+                <div class="work-card-art">
+                  <div class="art-glow amber"></div>
+                  <div class="art-grid-lines"></div>
+                  <div class="art-floating-element">
+                    <span class="art-code">NEURAL.PULSE</span>
+                    <span class="art-status">AI-STUDIO</span>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-details">
+                <div class="work-card-header">
+                  <span class="work-card-cat">Generative Audio // Neural Tooling</span>
+                  <span class="work-card-year">2025</span>
+                </div>
+                <h3 class="work-card-title">Neural Pulse</h3>
+                <p class="work-card-desc">AI-augmented creative workspace transforming acoustic waveforms into live procedural geometries in real-time.</p>
+                <div class="work-card-tags">
+                  <span class="w-tag">WebAudio</span>
+                  <span class="w-tag">TensorFlow.js</span>
+                  <span class="w-tag">Canvas 2D</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Divider Between Card 03 and Card 04 -->
+          <div class="work-card-divider" aria-hidden="true"></div>
+
+          <!-- Card 04 -->
+          <article class="work-project-card" id="work-card-4">
+            <div class="work-card-inner">
+              <div class="work-card-visual card-visual-4">
+                <div class="work-card-badge">04 // KINETIC MOTORING</div>
+                <div class="work-card-art">
+                  <div class="art-glow emerald"></div>
+                  <div class="art-grid-lines"></div>
+                  <div class="art-floating-element">
+                    <span class="art-code">VELOCE.KINETIC</span>
+                    <span class="art-status">HYPER-CAR 3D</span>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-details">
+                <div class="work-card-header">
+                  <span class="work-card-cat">Digital Twin // Configurator</span>
+                  <span class="work-card-year">2025</span>
+                </div>
+                <h3 class="work-card-title">Veloce Kinetic</h3>
+                <p class="work-card-desc">Photorealistic real-time raytraced vehicle configurator delivering seamless 60 FPS transitions across all viewports.</p>
+                <div class="work-card-tags">
+                  <span class="w-tag">WebGL 2.0</span>
+                  <span class="w-tag">PBR Materials</span>
+                  <span class="w-tag">GPU Instancing</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Divider Between Card 04 and Card 05 -->
+          <div class="work-card-divider" aria-hidden="true"></div>
+
+          <!-- Card 05: Explore Projects CTA Card -->
+          <article class="work-project-card work-cta-card" id="work-card-5">
+            <div class="work-card-inner cta-card-inner">
+              <div class="work-card-visual card-visual-cta">
+                <div class="work-card-badge">INDEX // 2024–2026</div>
+                <div class="art-glow cyan cta-glow"></div>
+                <div class="art-grid-lines"></div>
+                <div class="cta-giant-arrow-wrap">
+                  <span class="cta-giant-arrow">↗</span>
+                </div>
+              </div>
+              <div class="work-card-details cta-details">
+                <div class="work-card-header">
+                  <span class="work-card-cat">Complete Studio Index</span>
+                  <span class="work-card-year">28+ Works</span>
+                </div>
+                <h3 class="work-card-title">Explore Projects</h3>
+                <p class="work-card-desc">Discover our comprehensive collection of client flagships, experimental labs, and digital innovations.</p>
+                <div class="cta-actions-wrap">
+                  <a href="#contact" class="btn-explore-projects">
+                    <span>Browse Full Archive</span>
+                    <span class="btn-arrow">↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
-
       </div>
     </section>
 
@@ -377,6 +390,11 @@
     <section id="sequence-container-2" class="sequence-section">
       <div class="canvas-sticky-wrapper">
         <canvas id="sequence-canvas-2"></canvas>
+
+        <!-- Top Horizontally Centered Services Bar Throughout Rock Component -->
+        <div class="rock-services-top-bar" id="rock-services-top-bar">
+          <span class="rock-services-pill">SERVICES</span>
+        </div>
 
         <!-- Centered Core Disciplines (DESIGN, DEVELOPMENT, BRANDING) -->
         <div class="rock-center-disciplines" id="rock-center-disciplines">
@@ -423,8 +441,8 @@
 
         </div>
 
-        <!-- Vertical White Transition Strips after Rock Sequence -->
-        <div class="vertical-transition-strips" id="vertical-transition-strips-2" aria-hidden="true">
+        <!-- Vertical Strips Seamless White Full-Screen Overlay Container -->
+        <div class="vertical-transition-strips" id="vertical-transition-strips-2">
           <div class="vertical-strip-panel"></div>
           <div class="vertical-strip-panel"></div>
           <div class="vertical-strip-panel"></div>
@@ -433,8 +451,267 @@
           <div class="vertical-strip-panel"></div>
         </div>
 
+        <!-- Process Section Overlay: Brief to Launch (Scroll-Driven Roadmap) -->
+        <div class="process-section-overlay" id="process-section-overlay">
+          <div class="process-container">
+            <div class="process-header" id="process-header">
+              <h2 class="process-main-title" id="process-main-title">Brief to Launch</h2>
+              <p class="process-subtitle" id="process-subtitle"><span class="process-subtitle-accent">Our Process</span></p>
+            </div>
+            
+            <div class="process-roadmap-wrapper" id="process-roadmap-wrapper">
+              <!-- Card 01 -->
+              <div class="process-card glass-card" id="process-card-1">
+                <div class="process-card-top">
+                  <span class="process-badge">01</span>
+                </div>
+                <h3 class="process-title">Discover</h3>
+                <p class="process-desc">We learn your goals, audience, and constraints to map a clear path forward.</p>
+              </div>
+
+              <!-- Connector Curvy Line 1 -> 2 -->
+              <div class="process-connector" id="process-connector-1">
+                <svg class="process-connector-svg" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="violet-curve-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#403d39"/>
+                      <stop offset="100%" stop-color="#eb5e28"/>
+                    </linearGradient>
+                  </defs>
+                  <path class="connector-track-curve" d="M 0 20 C 30 6, 70 34, 100 20" stroke="rgba(138, 127, 122, 0.35)" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/>
+                  <path class="connector-progress-curve" id="connector-curve-1" d="M 0 20 C 30 6, 70 34, 100 20" stroke="url(#violet-curve-grad)" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle class="connector-node-dot" id="connector-dot-1" cx="100" cy="20" r="4" fill="#eb5e28"/>
+                </svg>
+              </div>
+
+              <!-- Card 02 -->
+              <div class="process-card glass-card" id="process-card-2">
+                <div class="process-card-top">
+                  <span class="process-badge">02</span>
+                </div>
+                <h3 class="process-title">Design</h3>
+                <p class="process-desc">We prototype and present the vision before a line of code is written.</p>
+              </div>
+
+              <!-- Connector Curvy Line 2 -> 3 -->
+              <div class="process-connector" id="process-connector-2">
+                <svg class="process-connector-svg" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="connector-track-curve" d="M 0 20 C 30 34, 70 6, 100 20" stroke="rgba(138, 127, 122, 0.35)" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/>
+                  <path class="connector-progress-curve" id="connector-curve-2" d="M 0 20 C 30 34, 70 6, 100 20" stroke="url(#violet-curve-grad)" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle class="connector-node-dot" id="connector-dot-2" cx="100" cy="20" r="4" fill="#eb5e28"/>
+                </svg>
+              </div>
+
+              <!-- Card 03 -->
+              <div class="process-card glass-card" id="process-card-3">
+                <div class="process-card-top">
+                  <span class="process-badge">03</span>
+                </div>
+                <h3 class="process-title">Build</h3>
+                <p class="process-desc">We develop, test, and iterate in tight 1-week sprints.</p>
+              </div>
+
+              <!-- Connector Curvy Line 3 -> 4 -->
+              <div class="process-connector" id="process-connector-3">
+                <svg class="process-connector-svg" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="connector-track-curve" d="M 0 20 C 30 6, 70 34, 100 20" stroke="rgba(138, 127, 122, 0.35)" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/>
+                  <path class="connector-progress-curve" id="connector-curve-3" d="M 0 20 C 30 6, 70 34, 100 20" stroke="url(#violet-curve-grad)" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle class="connector-node-dot" id="connector-dot-3" cx="100" cy="20" r="4" fill="#eb5e28"/>
+                </svg>
+              </div>
+
+              <!-- Card 04 -->
+              <div class="process-card glass-card" id="process-card-4">
+                <div class="process-card-top">
+                  <span class="process-badge">04</span>
+                </div>
+                <h3 class="process-title">Launch</h3>
+                <p class="process-desc">We deploy, monitor, and hand over with full documentation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Infinite Technology-Stack Marquee Overlay (Appears immediately after Rock white strips cover viewport) -->
+        <div class="tech-marquee-overlay" id="tech-marquee-overlay" aria-label="Technology Stack Ecosystem">
+          <div class="tech-marquee-header">
+            <span class="tech-marquee-tag">TECHNOLOGY &amp; PLATFORMS ECOSYSTEM</span>
+          </div>
+
+          <!-- Row 1: Continuous scroll from Right to Left -->
+          <div class="tech-marquee-row marquee-row-left" aria-hidden="true">
+            <div class="tech-marquee-track">
+              <!-- Set 1 (Row 1) -->
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="-11.5 -10.23174 23 20.46348" width="18" height="18"><circle cx="0" cy="0" r="2.05" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg></span><span class="tech-name">React</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 180 180" width="18" height="18"><mask height="180" id="mask-nextjs-1" maskUnits="userSpaceOnUse" width="180" x="0" y="0"><circle cx="90" cy="90" fill="#000" r="90"/></mask><g mask="url(#mask-nextjs-1)"><circle cx="90" cy="90" fill="#000" r="90"/><path d="M149.508 157.438L69.1478 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.137 149.508 157.438Z" fill="#ffffff"/><rect fill="#ffffff" height="72" width="12" x="115" y="54"/></g></svg></span><span class="tech-name">Next.js</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#3178c6" d="M1.5 1.5h125v125H1.5z"/><path fill="#ffffff" d="M68.8 81.3c2.3 3.9 5.7 7 10.4 9.1 4.7 2.1 10.1 3.2 16.2 3.2 5.6 0 10.2-.9 13.7-2.7 3.5-1.8 5.2-4.6 5.2-8.3 0-2.3-.7-4.2-2.2-5.7-1.5-1.5-3.6-2.7-6.4-3.7-2.8-1-6.5-1.9-11-2.9-6.3-1.4-11.4-3.1-15.3-5.2-3.9-2.1-6.8-4.7-8.8-7.9-2-3.2-3-7.1-3-11.7 0-4.9 1.3-9.2 3.8-13 2.5-3.8 6.1-6.8 10.8-8.9 4.7-2.1 10.3-3.2 16.8-3.2 6.8 0 12.6 1.3 17.5 3.9 4.9 2.6 8.5 6.3 10.9 11.1l-14.8 9.5c-1.6-3.1-3.9-5.4-6.8-6.9-2.9-1.5-6.3-2.3-10.2-2.3-4.4 0-7.8.8-10.1 2.5-2.3 1.7-3.5 4-3.5 7 0 2.2.7 4 2.1 5.4 1.4 1.4 3.4 2.5 6 3.4 2.6.9 6.2 1.8 10.7 2.8 6.5 1.5 11.7 3.3 15.6 5.4 3.9 2.1 6.8 4.8 8.8 8.1 2 3.3 3 7.3 3 12 0 5.4-1.3 10-4 14-2.7 4-6.5 7.1-11.5 9.3-5 2.2-11 3.3-18 3.3-8.3 0-15.3-1.6-21.1-4.7-5.8-3.1-10.1-7.7-12.9-13.8l15.5-9.3zM14.6 30.2h54.9V45H43.7v67.7H25.8V45H14.6V30.2z"/></svg></span><span class="tech-name">TypeScript</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#5fa04e" d="M64 7.6L12.4 37.4v59.6L64 126.8l51.6-29.8V37.4L64 7.6zm0 18.2l38.2 22.1v44.2L64 114.2 25.8 92.1V47.9L64 25.8z"/><path fill="#5fa04e" d="M64 45.2c-10.4 0-18.8 8.4-18.8 18.8s8.4 18.8 18.8 18.8 18.8-8.4 18.8-18.8S74.4 45.2 64 45.2z"/></svg></span><span class="tech-name">Node.js</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#3776ab" d="M63.5 5.5c-15.3 0-24.8 6.7-24.8 15.6v11.4h25.4v3.8H26.3C11.6 36.3 0 46.1 0 63.8c0 17.6 9.8 24.3 22.5 24.3h7.6V76.8c0-10.8 9.3-19.8 20.3-19.8h25.4V36.3H50.4c-6.8 0-12.3-5.5-12.3-12.3s5.5-12.3 12.3-12.3h26.4c6.8 0 12.3 5.5 12.3 12.3v3.8h12.7V21.1C111.8 10 99.4 5.5 63.5 5.5zm-8.9 7.6c3.1 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7-5.7-2.6-5.7-5.7 2.6-5.7 5.7-5.7z"/><path fill="#ffd43b" d="M64.5 122.5c15.3 0 24.8-6.7 24.8-15.6V95.5H63.9v-3.8h37.8c14.7 0 26.3-9.8 26.3-27.5 0-17.6-9.8-24.3-22.5-24.3h-7.6v11.3c0 10.8-9.3 19.8-20.3 19.8H42.2v20.7h25.4c6.8 0 12.3 5.5 12.3 12.3s-5.5 12.3-12.3 12.3H53.5c-6.8 0-12.3-5.5-12.3-12.3v-3.8H28.5v6.8c0 11.1 12.4 15.6 36 15.6zm8.9-7.6c-3.1 0-5.7-2.6-5.7-5.7s2.6-5.7 5.7-5.7 5.7 2.6 5.7 5.7-2.6 5.7-5.7 5.7z"/></svg></span><span class="tech-name">Python</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#10a37f"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1683a.071.071 0 0 1 .038.052v5.5826a4.5045 4.5045 0 0 1-4.4945 4.4947zm-9.66-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4997 4.4997 0 0 1-6.1402-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1683a.0757.0757 0 0 1-.071 0l-4.8303-2.7866A4.5045 4.5045 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4997 4.4997 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1635a.0804.0804 0 0 1-.038-.0567V6.0748a4.4997 4.4997 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.4597a.7948.7948 0 0 0-.3927.6813v6.722zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg></span><span class="tech-name">OpenAI</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#ff9900" d="M66.4 87.2c-15.5 0-29.3-5.9-40.4-15.7-1.3-1.1-1.3-3.1 0-4.3 1.3-1.1 3.4-1.1 4.7 0 9.8 8.6 22 13.8 35.7 13.8 12.2 0 24.3-4.2 34.3-12 1.3-1 3.4-.8 4.4.5 1 1.3.8 3.4-.5 4.4-11.4 8.9-25.2 13.3-38.2 13.3zm42.7-17.5c-.8-1.5-2.8-2.6-4.9-1.9-2.1.7-2.6 2.6-1.8 4.1 1.6 3.1 1 5.9-1.3 7.8-2.3 1.9-5.9 1.9-9.1 0-1.6-.9-3.7-.4-4.6 1.2-.9 1.6-.4 3.7 1.2 4.6 4.9 2.9 10.9 2.8 15.2-.7 4.2-3.4 5.3-8.8 2.5-15.1z"/><path fill="#232f3e" d="M37.3 49.8c0-5.8 4.2-9.6 11.2-9.6 4.3 0 7.8 1.4 10.3 3.6l-3.3 5.4c-1.8-1.4-4.2-2.3-6.9-2.3-3.1 0-4.7 1.3-4.7 3.3 0 4.7 15.6 2.7 15.6 13.7 0 6.2-4.7 10.1-12.1 10.1-4.9 0-9.2-1.7-11.9-4.2l3.4-5.6c2.1 1.7 5.1 2.8 8.4 2.8 3.6 0 5.4-1.4 5.4-3.6 0-5.1-15.3-2.9-15.3-13.6z"/></svg></span><span class="tech-name">AWS</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#336791" d="M63.8 6.5C32.1 6.5 6.5 32.1 6.5 63.8c0 31.7 25.6 57.3 57.3 57.3 31.7 0 57.3-25.6 57.3-57.3 0-31.7-25.6-57.3-57.3-57.3zm32.8 77.2c-2.3 7.3-7.5 13.5-14.8 17.5-6.3 3.4-13.6 5.2-21 5.2-10.4 0-20.4-3.7-28.3-10.4-3.2-2.7-5.9-6-8-9.7l9.8-6.1c1.4 2.6 3.3 4.9 5.5 6.7 5.4 4.5 12.3 7 19.5 7 9.8 0 18.7-5.1 23.4-13.5 1.7-3.1 2.6-6.6 2.6-10.2 0-8.9-5.4-16.8-13.6-20.1-4.7-1.9-9.9-2.8-15.1-2.6v-12c8.2-.1 16.3 1.9 23.5 5.9 10.9 6 17.8 17.4 17.8 30 0 4.3-.9 8.6-2.7 12.6z"/></svg></span><span class="tech-name">PostgreSQL</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#2496ed"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186zm-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186zm-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186zm5.893 2.715h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185zm-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.136a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185zm-2.928 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.208a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185zM23.99 11.6c-.47-.79-1.53-1.12-2.48-.82-.29.09-.57.23-.82.41-.3-.21-.63-.38-.99-.5-1.25-.43-2.61-.17-3.64.66-.46-.35-.98-.61-1.55-.76V9.006a1.18 1.18 0 00-1.18-1.18h-2.12a1.18 1.18 0 00-1.18 1.18v.89H8.1a1.18 1.18 0 00-1.18-1.18H5.136a1.18 1.18 0 00-1.18 1.18v.89H2.208a1.18 1.18 0 00-1.18 1.18v1.888a1.18 1.18 0 001.18 1.18h.186c.07 1.83.69 3.58 1.78 5.03C5.54 21.84 8.78 23.5 12.3 23.5c6.88 0 11.62-4.5 11.69-10.74.01-.4.01-.79 0-1.16z"/></svg></span><span class="tech-name">Docker</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 38 57" width="14" height="18"><path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/><path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/><path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/><path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/><path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/></svg></span><span class="tech-name">Figma</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 100 100" width="18" height="18"><circle cx="50" cy="50" r="48" fill="#0ae448"/><path d="M26 50c0-13.3 10.7-24 24-24 6.6 0 12.6 2.7 17 7l-7.1 7.1c-2.5-2.5-6-4.1-9.9-4.1-7.7 0-14 6.3-14 14s6.3 14 14 14c4.6 0 8.7-2.2 11.3-5.7H50V48h24v20.4C68 74.2 59.5 78 50 78c-13.3 0-24-10.7-24-24z" fill="#000000"/></svg></span><span class="tech-name">GSAP</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#000000"><path d="M21.94 6.06L12.5.61a1 1 0 00-1 0L2.06 6.06a1 1 0 00-.5.87v10.14a1 1 0 00.5.87l9.44 5.45a1 1 0 001 0l9.44-5.45a1 1 0 00.5-.87V6.93a1 1 0 00-.5-.87zM12 2.37l7.46 4.31L12 11 4.54 6.68 12 2.37zm-8.44 6L11 12.69v8.62L3.56 16.99V8.37zm16.88 8.62L13 21.31v-8.62l7.44-4.32v8.62z"/></svg></span><span class="tech-name">Three.js</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="-11.5 -10.23174 23 20.46348" width="18" height="18"><circle cx="0" cy="0" r="2.05" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg></span><span class="tech-name">React Native</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 400 400" width="18" height="18" fill="#e10098"><path d="M57.468 302.66l-13.97-24.198L183.13 42.923l13.97 24.198L57.468 302.66zm159.402 0l-13.97-24.198L342.532 42.923l13.97 24.198L216.87 302.66z"/><path d="M43.498 121.538l13.97-24.198 285.064 164.58-13.97 24.198L43.498 121.538z"/><path d="M43.498 278.462l285.064-164.58 13.97 24.198L57.468 302.66l-13.97-24.198z"/><circle cx="200" cy="43" r="26"/><circle cx="57" cy="125" r="26"/><circle cx="343" cy="125" r="26"/><circle cx="57" cy="275" r="26"/><circle cx="343" cy="275" r="26"/><circle cx="200" cy="357" r="26"/></svg></span><span class="tech-name">GraphQL</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#ee4c2c"><path d="M12.604 0a10.87 10.87 0 0 0-3.328.52c-.672.215-1.442.53-2.032.928a.455.455 0 0 0-.05.694l1.396 1.396a.454.454 0 0 0 .61.026c.712-.55 1.542-.942 2.45-1.127a7.712 7.712 0 0 1 6.848 2.378 7.74 7.74 0 0 1 2.274 5.513c0 2.072-.81 4.02-2.274 5.485a7.74 7.74 0 0 1-5.485 2.274 7.734 7.734 0 0 1-5.486-2.274l4.08-4.08a.455.455 0 0 0-.322-.777H4.545a.455.455 0 0 0-.455.455v6.516a.455.455 0 0 0 .777.322l1.64-1.64a10.82 10.82 0 0 0 6.097 2.47c3.003.14 5.99-.95 8.168-3.128a11.35 11.35 0 0 0 3.33-8.083c0-3.042-1.186-5.903-3.33-8.047A11.35 11.35 0 0 0 12.604 0zM17.15 3.327a1.69 1.69 0 1 0 0 3.38 1.69 1.69 0 0 0 0-3.38z"/></svg></span><span class="tech-name">PyTorch</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#f05032" d="M124.7 57.3L70.7 3.3c-4.4-4.4-11.6-4.4-16 0L42.2 15.8l15.9 15.9c3.7-1.2 8-.4 11 2.5 3 3 3.8 7.3 2.5 11l15.4 15.4c3.7-1.2 8-.4 11 2.5 4.3 4.3 4.3 11.3 0 15.6-4.3 4.3-11.3 4.3-15.6 0-3.2-3.2-3.9-7.8-2.3-11.7L66 52.8v31.4c1.7 1 3.2 2.5 4.1 4.4 3 5.3 1.2 12-4.1 15-5.3 3-12 1.2-15-4.1-3-5.3-1.2-12 4.1-15 1.5-.9 3.2-1.3 4.9-1.4V52.3c-1.7-.1-3.4-.6-4.9-1.4L35.2 65.8c.1 1.7-.4 3.4-1.4 4.9-3 5.3-9.7 7.1-15 4.1s-7.1-9.7-4.1-15c2.1-3.7 6.2-5.7 10.3-5.3l15-15L3.3 57.3c-4.4 4.4-4.4 11.6 0 16l54 54c4.4 4.4 11.6 4.4 16 0l51.4-54c4.4-4.4 4.4-11.6 0-16z"/></svg></span><span class="tech-name">Git</span></div>
+
+              <!-- Set 2 (Duplicate for seamless continuous loop) -->
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="-11.5 -10.23174 23 20.46348" width="18" height="18"><circle cx="0" cy="0" r="2.05" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg></span><span class="tech-name">React</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 180 180" width="18" height="18"><mask height="180" id="mask-nextjs-2" maskUnits="userSpaceOnUse" width="180" x="0" y="0"><circle cx="90" cy="90" fill="#000" r="90"/></mask><g mask="url(#mask-nextjs-2)"><circle cx="90" cy="90" fill="#000" r="90"/><path d="M149.508 157.438L69.1478 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.137 149.508 157.438Z" fill="#ffffff"/><rect fill="#ffffff" height="72" width="12" x="115" y="54"/></g></svg></span><span class="tech-name">Next.js</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#3178c6" d="M1.5 1.5h125v125H1.5z"/><path fill="#ffffff" d="M68.8 81.3c2.3 3.9 5.7 7 10.4 9.1 4.7 2.1 10.1 3.2 16.2 3.2 5.6 0 10.2-.9 13.7-2.7 3.5-1.8 5.2-4.6 5.2-8.3 0-2.3-.7-4.2-2.2-5.7-1.5-1.5-3.6-2.7-6.4-3.7-2.8-1-6.5-1.9-11-2.9-6.3-1.4-11.4-3.1-15.3-5.2-3.9-2.1-6.8-4.7-8.8-7.9-2-3.2-3-7.1-3-11.7 0-4.9 1.3-9.2 3.8-13 2.5-3.8 6.1-6.8 10.8-8.9 4.7-2.1 10.3-3.2 16.8-3.2 6.8 0 12.6 1.3 17.5 3.9 4.9 2.6 8.5 6.3 10.9 11.1l-14.8 9.5c-1.6-3.1-3.9-5.4-6.8-6.9-2.9-1.5-6.3-2.3-10.2-2.3-4.4 0-7.8.8-10.1 2.5-2.3 1.7-3.5 4-3.5 7 0 2.2.7 4 2.1 5.4 1.4 1.4 3.4 2.5 6 3.4 2.6.9 6.2 1.8 10.7 2.8 6.5 1.5 11.7 3.3 15.6 5.4 3.9 2.1 6.8 4.8 8.8 8.1 2 3.3 3 7.3 3 12 0 5.4-1.3 10-4 14-2.7 4-6.5 7.1-11.5 9.3-5 2.2-11 3.3-18 3.3-8.3 0-15.3-1.6-21.1-4.7-5.8-3.1-10.1-7.7-12.9-13.8l15.5-9.3zM14.6 30.2h54.9V45H43.7v67.7H25.8V45H14.6V30.2z"/></svg></span><span class="tech-name">TypeScript</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#5fa04e" d="M64 7.6L12.4 37.4v59.6L64 126.8l51.6-29.8V37.4L64 7.6zm0 18.2l38.2 22.1v44.2L64 114.2 25.8 92.1V47.9L64 25.8z"/><path fill="#5fa04e" d="M64 45.2c-10.4 0-18.8 8.4-18.8 18.8s8.4 18.8 18.8 18.8 18.8-8.4 18.8-18.8S74.4 45.2 64 45.2z"/></svg></span><span class="tech-name">Node.js</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#3776ab" d="M63.5 5.5c-15.3 0-24.8 6.7-24.8 15.6v11.4h25.4v3.8H26.3C11.6 36.3 0 46.1 0 63.8c0 17.6 9.8 24.3 22.5 24.3h7.6V76.8c0-10.8 9.3-19.8 20.3-19.8h25.4V36.3H50.4c-6.8 0-12.3-5.5-12.3-12.3s5.5-12.3 12.3-12.3h26.4c6.8 0 12.3 5.5 12.3 12.3v3.8h12.7V21.1C111.8 10 99.4 5.5 63.5 5.5zm-8.9 7.6c3.1 0 5.7 2.6 5.7 5.7s-2.6 5.7-5.7 5.7-5.7-2.6-5.7-5.7 2.6-5.7 5.7-5.7z"/><path fill="#ffd43b" d="M64.5 122.5c15.3 0 24.8-6.7 24.8-15.6V95.5H63.9v-3.8h37.8c14.7 0 26.3-9.8 26.3-27.5 0-17.6-9.8-24.3-22.5-24.3h-7.6v11.3c0 10.8-9.3 19.8-20.3 19.8H42.2v20.7h25.4c6.8 0 12.3 5.5 12.3 12.3s-5.5 12.3-12.3 12.3H53.5c-6.8 0-12.3-5.5-12.3-12.3v-3.8H28.5v6.8c0 11.1 12.4 15.6 36 15.6zm8.9-7.6c-3.1 0-5.7-2.6-5.7-5.7s2.6-5.7 5.7-5.7 5.7 2.6 5.7 5.7-2.6 5.7-5.7 5.7z"/></svg></span><span class="tech-name">Python</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#10a37f"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1683a.071.071 0 0 1 .038.052v5.5826a4.5045 4.5045 0 0 1-4.4945 4.4947zm-9.66-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4997 4.4997 0 0 1-6.1402-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1683a.0757.0757 0 0 1-.071 0l-4.8303-2.7866A4.5045 4.5045 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.6667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4997 4.4997 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1635a.0804.0804 0 0 1-.038-.0567V6.0748a4.4997 4.4997 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.4597a.7948.7948 0 0 0-.3927.6813v6.722zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg></span><span class="tech-name">OpenAI</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#ff9900" d="M66.4 87.2c-15.5 0-29.3-5.9-40.4-15.7-1.3-1.1-1.3-3.1 0-4.3 1.3-1.1 3.4-1.1 4.7 0 9.8 8.6 22 13.8 35.7 13.8 12.2 0 24.3-4.2 34.3-12 1.3-1 3.4-.8 4.4.5 1 1.3.8 3.4-.5 4.4-11.4 8.9-25.2 13.3-38.2 13.3zm42.7-17.5c-.8-1.5-2.8-2.6-4.9-1.9-2.1.7-2.6 2.6-1.8 4.1 1.6 3.1 1 5.9-1.3 7.8-2.3 1.9-5.9 1.9-9.1 0-1.6-.9-3.7-.4-4.6 1.2-.9 1.6-.4 3.7 1.2 4.6 4.9 2.9 10.9 2.8 15.2-.7 4.2-3.4 5.3-8.8 2.5-15.1z"/><path fill="#232f3e" d="M37.3 49.8c0-5.8 4.2-9.6 11.2-9.6 4.3 0 7.8 1.4 10.3 3.6l-3.3 5.4c-1.8-1.4-4.2-2.3-6.9-2.3-3.1 0-4.7 1.3-4.7 3.3 0 4.7 15.6 2.7 15.6 13.7 0 6.2-4.7 10.1-12.1 10.1-4.9 0-9.2-1.7-11.9-4.2l3.4-5.6c2.1 1.7 5.1 2.8 8.4 2.8 3.6 0 5.4-1.4 5.4-3.6 0-5.1-15.3-2.9-15.3-13.6z"/></svg></span><span class="tech-name">AWS</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#336791" d="M63.8 6.5C32.1 6.5 6.5 32.1 6.5 63.8c0 31.7 25.6 57.3 57.3 57.3 31.7 0 57.3-25.6 57.3-57.3 0-31.7-25.6-57.3-57.3-57.3zm32.8 77.2c-2.3 7.3-7.5 13.5-14.8 17.5-6.3 3.4-13.6 5.2-21 5.2-10.4 0-20.4-3.7-28.3-10.4-3.2-2.7-5.9-6-8-9.7l9.8-6.1c1.4 2.6 3.3 4.9 5.5 6.7 5.4 4.5 12.3 7 19.5 7 9.8 0 18.7-5.1 23.4-13.5 1.7-3.1 2.6-6.6 2.6-10.2 0-8.9-5.4-16.8-13.6-20.1-4.7-1.9-9.9-2.8-15.1-2.6v-12c8.2-.1 16.3 1.9 23.5 5.9 10.9 6 17.8 17.4 17.8 30 0 4.3-.9 8.6-2.7 12.6z"/></svg></span><span class="tech-name">PostgreSQL</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#2496ed"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186zm-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186zm-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186zm5.893 2.715h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185zm-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185zm-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.136a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185zm-2.928 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.208a.186.186 0 00-.186.185v1.888c0 .102.084.185.186.185zM23.99 11.6c-.47-.79-1.53-1.12-2.48-.82-.29.09-.57.23-.82.41-.3-.21-.63-.38-.99-.5-1.25-.43-2.61-.17-3.64.66-.46-.35-.98-.61-1.55-.76V9.006a1.18 1.18 0 00-1.18-1.18h-2.12a1.18 1.18 0 00-1.18 1.18v.89H8.1a1.18 1.18 0 00-1.18-1.18H5.136a1.18 1.18 0 00-1.18 1.18v.89H2.208a1.18 1.18 0 00-1.18 1.18v1.888a1.18 1.18 0 001.18 1.18h.186c.07 1.83.69 3.58 1.78 5.03C5.54 21.84 8.78 23.5 12.3 23.5c6.88 0 11.62-4.5 11.69-10.74.01-.4.01-.79 0-1.16z"/></svg></span><span class="tech-name">Docker</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 38 57" width="14" height="18"><path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/><path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/><path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/><path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/><path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/></svg></span><span class="tech-name">Figma</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 100 100" width="18" height="18"><circle cx="50" cy="50" r="48" fill="#0ae448"/><path d="M26 50c0-13.3 10.7-24 24-24 6.6 0 12.6 2.7 17 7l-7.1 7.1c-2.5-2.5-6-4.1-9.9-4.1-7.7 0-14 6.3-14 14s6.3 14 14 14c4.6 0 8.7-2.2 11.3-5.7H50V48h24v20.4C68 74.2 59.5 78 50 78c-13.3 0-24-10.7-24-24z" fill="#000000"/></svg></span><span class="tech-name">GSAP</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#000000"><path d="M21.94 6.06L12.5.61a1 1 0 00-1 0L2.06 6.06a1 1 0 00-.5.87v10.14a1 1 0 00.5.87l9.44 5.45a1 1 0 001 0l9.44-5.45a1 1 0 00.5-.87V6.93a1 1 0 00-.5-.87zM12 2.37l7.46 4.31L12 11 4.54 6.68 12 2.37zm-8.44 6L11 12.69v8.62L3.56 16.99V8.37zm16.88 8.62L13 21.31v-8.62l7.44-4.32v8.62z"/></svg></span><span class="tech-name">Three.js</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="-11.5 -10.23174 23 20.46348" width="18" height="18"><circle cx="0" cy="0" r="2.05" fill="#61DAFB"/><g stroke="#61DAFB" stroke-width="1" fill="none"><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g></svg></span><span class="tech-name">React Native</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 400 400" width="18" height="18" fill="#e10098"><path d="M57.468 302.66l-13.97-24.198L183.13 42.923l13.97 24.198L57.468 302.66zm159.402 0l-13.97-24.198L342.532 42.923l13.97 24.198L216.87 302.66z"/><path d="M43.498 121.538l13.97-24.198 285.064 164.58-13.97 24.198L43.498 121.538z"/><path d="M43.498 278.462l285.064-164.58 13.97 24.198L57.468 302.66l-13.97-24.198z"/><circle cx="200" cy="43" r="26"/><circle cx="57" cy="125" r="26"/><circle cx="343" cy="125" r="26"/><circle cx="57" cy="275" r="26"/><circle cx="343" cy="275" r="26"/><circle cx="200" cy="357" r="26"/></svg></span><span class="tech-name">GraphQL</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#ee4c2c"><path d="M12.604 0a10.87 10.87 0 0 0-3.328.52c-.672.215-1.442.53-2.032.928a.455.455 0 0 0-.05.694l1.396 1.396a.454.454 0 0 0 .61.026c.712-.55 1.542-.942 2.45-1.127a7.712 7.712 0 0 1 6.848 2.378 7.74 7.74 0 0 1 2.274 5.513c0 2.072-.81 4.02-2.274 5.485a7.74 7.74 0 0 1-5.485 2.274 7.734 7.734 0 0 1-5.486-2.274l4.08-4.08a.455.455 0 0 0-.322-.777H4.545a.455.455 0 0 0-.455.455v6.516a.455.455 0 0 0 .777.322l1.64-1.64a10.82 10.82 0 0 0 6.097 2.47c3.003.14 5.99-.95 8.168-3.128a11.35 11.35 0 0 0 3.33-8.083c0-3.042-1.186-5.903-3.33-8.047A11.35 11.35 0 0 0 12.604 0zM17.15 3.327a1.69 1.69 0 1 0 0 3.38 1.69 1.69 0 0 0 0-3.38z"/></svg></span><span class="tech-name">PyTorch</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#f05032" d="M124.7 57.3L70.7 3.3c-4.4-4.4-11.6-4.4-16 0L42.2 15.8l15.9 15.9c3.7-1.2 8-.4 11 2.5 3 3 3.8 7.3 2.5 11l15.4 15.4c3.7-1.2 8-.4 11 2.5 4.3 4.3 4.3 11.3 0 15.6-4.3 4.3-11.3 4.3-15.6 0-3.2-3.2-3.9-7.8-2.3-11.7L66 52.8v31.4c1.7 1 3.2 2.5 4.1 4.4 3 5.3 1.2 12-4.1 15-5.3 3-12 1.2-15-4.1-3-5.3-1.2-12 4.1-15 1.5-.9 3.2-1.3 4.9-1.4V52.3c-1.7-.1-3.4-.6-4.9-1.4L35.2 65.8c.1 1.7-.4 3.4-1.4 4.9-3 5.3-9.7 7.1-15 4.1s-7.1-9.7-4.1-15c2.1-3.7 6.2-5.7 10.3-5.3l15-15L3.3 57.3c-4.4 4.4-4.4 11.6 0 16l54 54c4.4 4.4 11.6 4.4 16 0l51.4-54c4.4-4.4 4.4-11.6 0-16z"/></svg></span><span class="tech-name">Git</span></div>
+            </div>
+          </div>
+
+          <!-- Row 2: Continuous scroll from Left to Right -->
+          <div class="tech-marquee-row marquee-row-right" aria-hidden="true">
+            <div class="tech-marquee-track">
+              <!-- Set 1 (Row 2) -->
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#f7df1e" d="M1.5 1.5h125v125H1.5z"/><path fill="#000000" d="M25.4 101.4l15.6-9.5c3.1 5.4 7.2 9.5 14.5 9.5 7.4 0 12.1-3.6 12.1-17.7V34.5h18.8v49.4c0 23.3-13.6 33.7-32.4 33.7-14.7 0-23.7-7.6-28.6-16.2zM79.8 99.4l15.6-9c4.1 6.8 9.7 11.8 19.4 11.8 8.1 0 13.4-4.1 13.4-9.8 0-6.8-5.4-9.3-14.5-13.3l-5-2.2c-14.3-6.1-23.8-13.8-23.8-30.1 0-14.9 11.4-26.2 29.2-26.2 12.8 0 21.9 4.6 28.5 16.3l-14.7 9.4c-3.2-5.7-6.8-8-13.8-8-6.1 0-10.1 3.8-10.1 8.5 0 5.9 3.9 8.2 12.8 12.1l5 2.2c16.9 7.3 26 15 26 31.7 0 18.2-14.3 27.6-32.9 27.6-18.4 0-29.8-8.8-35.1-20z"/></svg></span><span class="tech-name">JavaScript</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#e44d26" d="M13.6 117.8L3.2 2h121.6l-10.4 115.8L64 126z"/><path fill="#f16529" d="M64 116.8l38.9-10.8 8.8-98.8H64z"/><path fill="#ebebeb" d="M64 53.6H44.8l-1.3-14.8H64V24.3H27.5l4 44.1H64zm0 39.8l-.2.1-16.8-4.5-1.1-12.1H31.1l2.1 23.6 30.7 8.5.1-.3z"/><path fill="#ffffff" d="M64 53.6h19.2l-1.8 20.3-17.4 4.7v15.3l30.7-8.5.3-3.7 3.5-38.1H64zm0-29.3v14.5h35.3l1.3-14.5z"/></svg></span><span class="tech-name">HTML5</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#1572b6" d="M13.6 117.8L3.2 2h121.6l-10.4 115.8L64 126z"/><path fill="#33a9dc" d="M64 116.8l38.9-10.8 8.8-98.8H64z"/><path fill="#ebebeb" d="M64 53.6H44.8l-1.3-14.8H64V24.3H27.5l4 44.1H64zm0 39.8l-.2.1-16.8-4.5-1.1-12.1H31.1l2.1 23.6 30.7 8.5.1-.3z"/><path fill="#ffffff" d="M64 53.6h19.2l-1.8 20.3-17.4 4.7v15.3l30.7-8.5.3-3.7 3.5-38.1H64zm0-29.3v14.5h35.3l1.3-14.5z"/></svg></span><span class="tech-name">CSS3</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#ed8b00" d="M49.2 101.4s-9.3 1.7-6.5 6.8c3.3 6.1 12.8 5.6 20.7 5.6 13.9 0 28.5-3.3 35.8-9.8 0 0-3.3 2.5-9.8 3.6-9.1 1.5-22.3 1.4-30.8-.9-6.3-1.6-9.4-5.3-9.4-5.3zm-3.6-15.3s-10.7 2.4-7.5 9c3.9 8 16.5 7.4 26.6 7.3 17.8-.1 36.6-4.4 46.1-12.9 0 0-4.3 3.3-12.7 4.7-11.7 2-28.7 1.8-39.6-1.2-8-2.1-12.9-6.9-12.9-6.9zM61.8 52.8c4.8 5.5-1.3 11.7-1.3 11.7s12.5-6.5 6.7-14.7c-5.4-7.7-10.2-11.6 14.1-25 0 0-29 7.4-19.5 28zm18.3 24.3c7.7-6.2 4.1-12.3 4.1-12.3s-2.1 2.2-6.1 3.5c-4.4 1.4-9.3 1.2-14.1.2-7.5-1.5-14.6-5.4-14.6-5.4s2.6 3.4 9.1 5.9c7.6 2.9 16.3 3.6 21.6 8.1z"/></svg></span><span class="tech-name">Java</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#47a248" d="M64 5.5C64 5.5 24 35 24 74.8c0 24.2 15.6 42.1 36.3 47.7v-26.6c-13.6-3.8-21.2-14.3-21.2-27.2 0-21.8 24.9-46.7 24.9-46.7s24.9 24.9 24.9 46.7c0 12.9-7.6 23.4-21.2 27.2v26.6c20.7-5.6 36.3-23.5 36.3-47.7C104 35 64 5.5 64 5.5z"/><path fill="#499d4a" d="M64 6.7v115.8c.8.2 1.6.4 2.4.5V95.9c13.6-3.8 21.2-14.3 21.2-27.2 0-21.8-23.6-46.7-23.6-62z"/></svg></span><span class="tech-name">MongoDB</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#ffa000" d="M19.4 91.8L38.2 17.5c.8-3.1 4.9-3.9 6.8-1.3l17.7 24.6L19.4 91.8z"/><path fill="#f57c00" d="M73.5 49.3L62.7 40.8l-43.3 51 54.1-42.5z"/><path fill="#ffca28" d="M108.6 91.8L93.7 29.5c-.7-3.1-4.7-4-6.8-1.6L19.4 91.8h89.2z"/><path fill="#ffa000" d="M67.8 116.3c-2.4 1.4-5.2 1.4-7.6 0L19.4 91.8l44.6 25.4 44.6-25.4-40.8 24.5z"/></svg></span><span class="tech-name">Firebase</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#0078d4" d="M15.4 98.4l34.4-78.2c1.4-3.2 4.6-5.2 8.1-5.2h28.7c2.3 0 4.2 1.9 4.2 4.2 0 1.2-.5 2.3-1.4 3.1L38.8 66.8l38.2 27.9c1.9 1.4 2.4 4 1.2 6-1 1.7-2.9 2.7-4.9 2.7H20.8c-3.6 0-6.9-2.2-8.2-5.6-.4-.9-.6-1.8-.6-2.8 0-2.3 1.3-4.4 3.4-6.6z"/><path fill="#008ad7" d="M84.5 25.8l28.1 63.8c1.4 3.2 1.1 6.8-.8 9.7-1.9 2.9-5.1 4.7-8.6 4.7H69.4l34.4-64.8c1.3-2.5 1.1-5.5-.5-7.8-1.6-2.3-4.2-3.6-7-3.6H84.5v-2z"/></svg></span><span class="tech-name">Azure</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#181717" d="M64 5.5C28.7 5.5 0 34.2 0 69.5c0 28.3 18.3 52.3 43.8 60.8 3.2.6 4.4-1.4 4.4-3.1 0-1.5-.1-6.6-.1-12-17.8 3.9-21.6-7.6-21.6-7.6-2.9-7.4-7.1-9.4-7.1-9.4-5.8-4 .4-3.9.4-3.9 6.4.5 9.8 6.6 9.8 6.6 5.7 9.8 15 7 18.6 5.3.6-4.1 2.2-7 4-8.6-14.2-1.6-29.2-7.1-29.2-31.6 0-7 2.5-12.7 6.6-17.2-.7-1.6-2.9-8.1.6-17 0 0 5.4-1.7 17.6 6.6 5.1-1.4 10.6-2.2 16-2.2s10.9.7 16 2.2c12.2-8.3 17.6-6.6 17.6-6.6 3.5 8.9 1.3 15.4.6 17 4.1 4.5 6.6 10.2 6.6 17.2 0 24.6-15 29.9-29.3 31.5 2.3 2 4.3 5.9 4.3 11.9 0 8.6-.1 15.5-.1 17.6 0 1.7 1.2 3.7 4.4 3.1 25.4-8.5 43.7-32.5 43.7-60.8C128 34.2 99.3 5.5 64 5.5z"/></svg></span><span class="tech-name">GitHub</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#0055ff"><path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/></svg></span><span class="tech-name">Framer</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#8b5cf6"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1.27c.34-.6.99-1 1.73-1a2 2 0 1 1 0 4c-.74 0-1.39-.4-1.73-1H21a7 7 0 0 1-7 7v1.27c.6.34 1 .99 1 1.73a2 2 0 1 1-4 0c0-.74.4-1.39 1-1.73V21a7 7 0 0 1-7-7H3.73c-.34.6-.99 1-1.73 1a2 2 0 1 1 0-4c.74 0 1.39.4 1.73 1H5a7 7 0 0 1 7-7V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A1.5 1.5 0 0 0 6 14.5 1.5 1.5 0 0 0 7.5 16 1.5 1.5 0 0 0 9 14.5 1.5 1.5 0 0 0 7.5 13m9 0a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5M12 9a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5z"/></svg></span><span class="tech-name">AI / ML</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#06b6d4" d="M64 24c-21.3 0-34.7 10.7-40 32 8-10.7 17.3-14.7 28-12 6.1 1.5 10.5 5.9 15.3 10.8C75.1 62.8 84.4 72 104 72c21.3 0 34.7-10.7 40-32-8 10.7-17.3 14.7-28 12-6.1-1.5-10.5-5.9-15.3-10.8C92.9 33.2 83.6 24 64 24zM24 72c-21.3 0-34.7 10.7-40 32 8-10.7 17.3-14.7 28-12 6.1 1.5 10.5 5.9 15.3 10.8C35.1 110.8 44.4 120 64 120c21.3 0 34.7-10.7 40-32-8 10.7-17.3 14.7-28 12-6.1-1.5-10.5-5.9-15.3-10.8C52.9 81.2 43.6 72 24 72z"/></svg></span><span class="tech-name">Tailwind CSS</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#42b883" d="M78.8 11.2L64 36.8 49.2 11.2H1.5l62.5 108.3L126.5 11.2z"/><path fill="#35495e" d="M78.8 11.2L64 36.8 49.2 11.2H25.3l38.7 67 38.7-67z"/></svg></span><span class="tech-name">Vue.js</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#02569b" d="M78.2 121.2L35.6 78.6l21.3-21.3 64 63.9H78.2z"/><path fill="#0175c2" d="M78.2 6.8H121L46.3 81.5l-21.3-21.3L78.2 6.8z"/><path fill="#29b6f6" d="M78.2 64.2L56.9 85.5l21.3 21.3 21.3-21.3L78.2 64.2z"/></svg></span><span class="tech-name">Flutter</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 128 128" width="18" height="18"><path fill="#f05138" d="M123.6 84.8c-1.3 2.5-19.1 33.7-53.8 33.7C31.5 118.5 7.6 87.7 5.2 84.3c-.6-.8-.2-1.9.8-2.2 1-.2 2 .4 2.5 1.3 8.3 15.6 27.6 34.3 54.5 31.8 13.9-1.3 27-8.1 36.6-18.7-25-1.9-46.3-15.6-57.8-37.1 13.9 10.3 30.6 15.7 47.9 15.4-15.6-12.7-25-31.5-25.5-51.5 9.7 10.6 22.8 18.2 37.1 21.6-4.5-12.6-3.8-26.6 2-38.7.4-.8 1.4-1 2.1-.5.7.5.8 1.4.5 2.2-4.5 14.3-.8 30.1 9.7 40.8 4.7 4.8 10.3 8.6 16.4 11.2-1.4-3.6-2.1-7.5-2.1-11.4 0-10.9 5.3-21.2 14.3-27.6.7-.5 1.7-.3 2.2.4.5.7.3 1.7-.4 2.2-8.3 5.9-13.2 15.4-13.2 25.5 0 2.5.4 5 1.2 7.4 5.9 2 11.9 2.9 18 2.6 1.1-.1 1.9.8 1.8 1.9-.1 1.1-.9 1.9-2 1.9-5.1.2-10.2-.5-15.1-2.1 4.5 5.5 10.2 9.9 16.7 13 1 .5 1.4 1.6.9 2.6z"/></svg></span><span class="tech-name">Swift</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#22c55e"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span class="tech-name">LangChain</span></div>
+              <div class="tech-pill"><span class="tech-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="#ec4899"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9zm-5.5 11c-.83 0-1.5-.67-1.5-1.5S5.67 10 6.5 10s1.5.67 1.5 1.5S7.33 13 6.5 13zm3-4C8.67 9 8 8.33 8 7.5S8.67 6 9.5 6s1.5.67 1.5 1.5S10.33 9 9.5 9zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 6 14.5 6s1.5.67 1.5 1.5S15.33 9 14.5 9zm3 4c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></span><span class="tech-name">UI / UX</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
+
+    <!-- Book A Demo / Design Consultation Section -->
+    <section class="book-a-demo-section" id="consultation">
+      <div class="demo-section-container">
+        <div class="demo-grid">
+          <!-- Left Column: Info & Social Proof -->
+          <div class="demo-info-col">
+            <div class="demo-breadcrumb">
+              <span class="breadcrumb-link">Contact</span> / <span class="breadcrumb-current">Design Consultation</span>
+            </div>
+            <h2 class="demo-heading">
+              Let's Design Together
+            </h2>
+            <div class="demo-benefits-wrapper">
+              <div class="demo-benefits-list">
+                <div class="demo-benefit-item">
+                  <span class="benefit-check-icon">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  <p class="benefit-text">Share your design vision and project goals</p>
+                </div>
+                <div class="demo-benefit-item">
+                  <span class="benefit-check-icon">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  <p class="benefit-text">Experience a tailored design demo</p>
+                </div>
+                <div class="demo-benefit-item">
+                  <span class="benefit-check-icon">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  <p class="benefit-text">Discover premium design solutions</p>
+                </div>
+              </div>
+
+              <p class="demo-trusted-title">
+                Trusted by +10,000 designers and creatives
+              </p>
+
+              <!-- Partner Brand Wordmarks (OpenAI, Claude, Replicate, Cursor, Gemini, GitHub) -->
+              <div class="demo-logos-grid">
+                <div class="partner-logo-item">
+                  <svg viewBox="0 0 90 24" height="20" fill="currentColor"><text x="0" y="17" font-family="var(--font-hero)" font-size="16" font-weight="700" letter-spacing="-0.02em">OpenAI</text></svg>
+                </div>
+                <div class="partner-logo-item">
+                  <svg viewBox="0 0 100 24" height="20" fill="currentColor"><text x="0" y="17" font-family="var(--font-hero)" font-size="16" font-weight="700" letter-spacing="-0.02em">Claude AI</text></svg>
+                </div>
+                <div class="partner-logo-item">
+                  <svg viewBox="0 0 100 24" height="20" fill="currentColor"><text x="0" y="17" font-family="var(--font-hero)" font-size="16" font-weight="700" letter-spacing="-0.02em">Replicate</text></svg>
+                </div>
+                <div class="partner-logo-item">
+                  <svg viewBox="0 0 85 24" height="20" fill="currentColor"><text x="0" y="17" font-family="var(--font-hero)" font-size="16" font-weight="700" letter-spacing="-0.02em">Cursor</text></svg>
+                </div>
+                <div class="partner-logo-item">
+                  <svg viewBox="0 0 85 24" height="20" fill="currentColor"><text x="0" y="17" font-family="var(--font-hero)" font-size="16" font-weight="700" letter-spacing="-0.02em">Gemini</text></svg>
+                </div>
+                <div class="partner-logo-item">
+                  <svg viewBox="0 0 85 24" height="20" fill="currentColor"><text x="0" y="17" font-family="var(--font-hero)" font-size="16" font-weight="700" letter-spacing="-0.02em">GitHub</text></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Form -->
+          <form class="demo-form-card" id="consultationForm">
+            <div class="demo-form-row">
+              <div class="demo-form-group">
+                <label class="demo-label" for="fullName">Full Name</label>
+                <input class="demo-input" id="fullName" type="text" placeholder="Your Name" required />
+              </div>
+              <div class="demo-form-group">
+                <label class="demo-label" for="workEmail">Work Email</label>
+                <input class="demo-input" id="workEmail" type="email" placeholder="contact@orbenyx.studio" required />
+              </div>
+            </div>
+
+            <div class="demo-form-group full-width">
+              <label class="demo-label" for="projectDetails">Project Details <span class="label-optional">(Optional)</span></label>
+              <textarea class="demo-textarea" id="projectDetails" placeholder="Tell us about your design project..." rows="3"></textarea>
+            </div>
+
+            <div class="demo-form-group full-width">
+              <label class="demo-label" for="referralSource">How Did You Hear About Us? <span class="label-optional">(Optional)</span></label>
+              <textarea class="demo-textarea" id="referralSource" placeholder="Share where you found us..." rows="2"></textarea>
+            </div>
+
+            <button type="submit" class="demo-submit-btn">
+              <span>Connect with Our Design Team</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span>&copy; 2026 ORBENYX STUDIO</span>
+          <span class="footer-tech">&bull; CRAFTED WITH PRECISION</span>
+        </div>
+        <div class="footer-links">
+          <a href="#consultation">SCHEDULE CONSULTATION &rarr;</a>
+        </div>
+      </div>
+    </footer>
 
   </main>
 

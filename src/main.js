@@ -341,12 +341,12 @@ function setupDualScrollTriggers() {
     gsap.set(splitDivider, { scaleY: 0, opacity: 0 });
   }
   const isMobile = window.innerWidth <= 768;
-  const cardExpandScale = isMobile ? 1.0 : 1.25;
+  const cardExpandScale = isMobile ? 1.02 : 1.25;
   const cardYOffset1 = isMobile ? 0 : 130;
   const cardYOffset3 = isMobile ? 0 : -130;
   const cardXStart = isMobile ? 0 : -35;
-  const cardInitScale = isMobile ? 0.92 : 0.35;
-  const cardInitBlur = isMobile ? '4px' : '8px';
+  const cardInitScale = isMobile ? 0.96 : 0.35;
+  const cardInitBlur = isMobile ? '2px' : '8px';
 
   if (card1) {
     gsap.set(card1, { opacity: 0, x: cardXStart, y: cardYOffset1, scale: cardInitScale, filter: `blur(${cardInitBlur})`, zIndex: 1 });
@@ -641,15 +641,13 @@ function setupDualScrollTriggers() {
 
   // =========================================================================
   // WHITE STUDIO PAGE: WORK & EXPLORATIONS HORIZONTAL GALLERY
-  // 100% Scroll-Driven: Intro Appears & Settles -> Then Cards Enter & Stream
+  // 100% Scroll-Driven Horizontal Showcase Track
   // =========================================================================
   const worksSection = document.getElementById('white-studio-page');
+  const cardsStream = document.getElementById('works-cards-stream');
   const worksLeftContent = document.getElementById('works-left-content');
   const worksDivider = document.getElementById('works-split-divider');
-  const cardsStream = document.getElementById('works-cards-stream');
   const allWorkCards = document.querySelectorAll('.work-project-card');
-  const workCard1 = document.getElementById('work-card-1');
-  const workCard5 = document.getElementById('work-card-5');
 
   if (worksSection && cardsStream) {
     // Keep all cards crisp and ready in the horizontal flex row
@@ -657,113 +655,40 @@ function setupDualScrollTriggers() {
       gsap.set(allWorkCards, { opacity: 1, x: 0, y: 0, rotation: 0, filter: 'blur(0px)' });
     }
 
-    const getInitialCardsX = () => (window.innerWidth <= 768 ? window.innerWidth * 1.05 : window.innerWidth * 0.6);
-    
-    // Position cards stream completely off-screen to the right at initial state
-    gsap.set(cardsStream, { x: getInitialCardsX() });
-    if (worksLeftContent) gsap.set(worksLeftContent, { opacity: 0, y: 40, filter: 'blur(10px)', x: 0 });
-    if (worksDivider) gsap.set(worksDivider, { scaleY: 0, opacity: 0, x: 0 });
+    gsap.set(cardsStream, { x: 0 });
+    if (worksLeftContent) gsap.set(worksLeftContent, { opacity: 1, y: 0, filter: 'blur(0px)' });
+    if (worksDivider) gsap.set(worksDivider, { scaleY: 1, opacity: 1 });
+
+    const getScrollDistance = () => {
+      const pad = window.innerWidth <= 768 ? 32 : window.innerWidth * 0.06;
+      return Math.max(0, cardsStream.scrollWidth - window.innerWidth + pad);
+    };
 
     const tlWorks = gsap.timeline({
       scrollTrigger: {
         trigger: worksSection,
         start: 'top top',
-        end: '+=700%',
+        end: '+=600%',
         pin: true,
         pinSpacing: true,
-        scrub: 0.8
+        scrub: 0.8,
+        invalidateOnRefresh: true
       }
     });
 
-    const getScrollDistance = () => {
-      const isMobileView = window.innerWidth <= 768;
-      if (isMobileView) {
-        if (workCard5 && workCard1) {
-          return workCard5.offsetLeft - workCard1.offsetLeft + 16;
-        }
-        return cardsStream.scrollWidth - window.innerWidth + 32;
-      }
-      if (workCard5 && workCard1 && workCard5.offsetLeft > 0) {
-        // Bring all 5 cards across screen until Card 5 settles in comfortable focus
-        return workCard5.offsetLeft - workCard1.offsetLeft + (window.innerWidth * 0.08);
-      }
-      const cardWidth = workCard1 ? workCard1.offsetWidth : 500;
-      const gap = parseFloat(window.getComputedStyle(cardsStream).gap) || 48;
-      return (cardWidth + gap) * 4;
-    };
-
-    // =======================================================================
-    // STAGE 1 (0.0s -> 2.8s): "Work & Explorations" Appears & Settles First
-    // (No cards are visible or moving yet - calm, clean introductory focus)
-    // =======================================================================
-    if (worksLeftContent) {
-      tlWorks.to(
-        worksLeftContent,
-        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.4, ease: 'power2.out' },
-        0.0
-      );
-    }
-
-    if (worksDivider) {
-      tlWorks.to(
-        worksDivider,
-        { scaleY: 1, opacity: 1, duration: 1.0, ease: 'power2.out' },
-        0.4
-      );
-    }
-
-    // =======================================================================
-    // STAGE 2 (2.8s -> 11.0s): Project Cards Enter from Right & Stream Across
-    // =======================================================================
-    tlWorks.fromTo(
+    // Stream the gallery smoothly from right to left as user scrolls
+    tlWorks.to(
       cardsStream,
-      { x: getInitialCardsX },
       {
         x: () => -getScrollDistance(),
-        duration: 8.2,
+        duration: 10.0,
         ease: 'none'
       },
-      2.8
+      0.0
     );
 
-    // On mobile, fade out introductory title smoothly as cards begin flowing across
-    if (worksLeftContent && window.innerWidth <= 768) {
-      tlWorks.to(
-        worksLeftContent,
-        { opacity: 0, y: -35, filter: 'blur(6px)', duration: 1.0, ease: 'power1.out' },
-        2.8
-      );
-    }
-
-    // On desktop, gently slide heading and divider slightly for subtle parallax depth
-    if (worksLeftContent && window.innerWidth > 768) {
-      tlWorks.to(
-        worksLeftContent,
-        {
-          x: () => -getScrollDistance() * 0.3,
-          duration: 8.2,
-          ease: 'none'
-        },
-        2.8
-      );
-    }
-
-    if (worksDivider && window.innerWidth > 768) {
-      tlWorks.to(
-        worksDivider,
-        {
-          x: () => -getScrollDistance() * 0.3,
-          duration: 8.2,
-          ease: 'none'
-        },
-        2.8
-      );
-    }
-
-    // =======================================================================
-    // STAGE 3 (11.0s -> 12.5s): Settle Pause on Final Card Before Unpinning
-    // =======================================================================
-    tlWorks.set({}, {}, 12.5);
+    // Settle pause on final card before unpinning
+    tlWorks.set({}, {}, 11.2);
   }
 
   // =========================================================================
@@ -780,8 +705,44 @@ function setupDualScrollTriggers() {
   const rightRockCaps = [rockCap2, rockCap4, rockCap6].filter(Boolean);
   const allRockCaps = [...leftRockCaps, ...rightRockCaps];
   const verticalStrips2 = document.querySelectorAll('#sequence-container-2 .vertical-strip-panel');
+  const processOverlay = document.getElementById('process-section-overlay');
+  const processMainTitle = document.getElementById('process-main-title');
+  const processSubtitle = document.getElementById('process-subtitle');
+  const processCard1 = document.getElementById('process-card-1');
+  const processCard2 = document.getElementById('process-card-2');
+  const processCard3 = document.getElementById('process-card-3');
+  const processCard4 = document.getElementById('process-card-4');
+  const connectorCurve1 = document.getElementById('connector-curve-1');
+  const connectorCurve2 = document.getElementById('connector-curve-2');
+  const connectorCurve3 = document.getElementById('connector-curve-3');
+  const connectorDot1 = document.getElementById('connector-dot-1');
+  const connectorDot2 = document.getElementById('connector-dot-2');
+  const connectorDot3 = document.getElementById('connector-dot-3');
+  const techMarquee2 = document.querySelector('#sequence-container-2 .tech-marquee-overlay') || document.getElementById('tech-marquee-overlay');
+  
   if (verticalStrips2.length > 0) {
     gsap.set(verticalStrips2, { yPercent: -101 });
+  }
+  if (processOverlay) {
+    gsap.set(processOverlay, { opacity: 0, visibility: 'hidden', pointerEvents: 'none' });
+  }
+  if (processMainTitle) {
+    gsap.set(processMainTitle, { opacity: 0, y: 30, filter: 'blur(8px)' });
+  }
+  if (processSubtitle) {
+    gsap.set(processSubtitle, { opacity: 0, y: 20, filter: 'blur(6px)' });
+  }
+  [processCard1, processCard2, processCard3, processCard4].forEach((c) => {
+    if (c) gsap.set(c, { opacity: 0, y: 25, scale: 0.92, filter: 'blur(6px)' });
+  });
+  [connectorCurve1, connectorCurve2, connectorCurve3].forEach((c) => {
+    if (c) gsap.set(c, { strokeDasharray: 125, strokeDashoffset: 125 });
+  });
+  [connectorDot1, connectorDot2, connectorDot3].forEach((d) => {
+    if (d) gsap.set(d, { scale: 0, transformOrigin: '100px 20px' });
+  });
+  if (techMarquee2) {
+    gsap.set(techMarquee2, { opacity: 0, y: 35, filter: 'blur(6px)' });
   }
 
   // Set initial position: above the screen with yPercent: -50 for clean vertical centering (pure CSS handles left/right on desktop and auto margins on mobile)
@@ -793,14 +754,16 @@ function setupDualScrollTriggers() {
     scrollTrigger: {
       trigger: CONFIG.seq2.containerId,
       start: 'top 64px',
-      end: '+=900%',
+      end: '+=1200%',
       pin: true,
       pinSpacing: true,
       scrub: 0.8,
       onUpdate: (self) => {
         const progress = self.progress;
+        // Rock Sequence plays all 120 frames smoothly from progress 0.00 to 0.65
+        const seq2Prog = Math.min(progress / 0.65, 1);
         const frameIndex = Math.min(
-          Math.floor(progress * CONFIG.seq2.frameCount),
+          Math.floor(seq2Prog * CONFIG.seq2.frameCount),
           CONFIG.seq2.frameCount - 1
         );
         state.seq2.currentFrame = frameIndex;
@@ -809,84 +772,82 @@ function setupDualScrollTriggers() {
         if (self.isActive) {
           if (hudSeqTag) hudSeqTag.textContent = CONFIG.seq2.name;
           if (hudFrameNum) hudFrameNum.textContent = `${String(frameIndex + 1).padStart(3, '0')} / ${CONFIG.seq2.frameCount}`;
-          if (hudProgressVal) hudProgressVal.textContent = `${Math.round(progress * 100)}%`;
+          if (hudProgressVal) hudProgressVal.textContent = `${Math.round(seq2Prog * 100)}%`;
         }
       }
     }
   });
 
-  // Dissolve centered disciplines (DESIGN, DEVELOPMENT, BRANDING) as user scrolls into rock sequence (0.00 -> 0.20)
+  // Dissolve centered disciplines (DESIGN, DEVELOPMENT, BRANDING) as user scrolls into rock sequence (0.00 -> 0.15)
   if (rockCenterDisciplines) {
     tl2.fromTo(
       rockCenterDisciplines,
       { opacity: 1, y: 0, filter: 'blur(0px)' },
-      { opacity: 0, y: -60, filter: 'blur(10px)', duration: 0.20, ease: 'power2.out' },
+      { opacity: 0, y: -60, filter: 'blur(10px)', duration: 0.15, ease: 'power2.out' },
       0.0
     );
   }
 
   // =========================================================================
-  // CAPABILITIES FLOW (Triggered at Frame 29 = 29/120 ≈ 0.241 progress)
-  // Pair 1: Mobile Development & Web Development (Stacked on mobile, side-by-side on desktop)
-  // Flow in from Top -> Settle in Center -> Flow out to Bottom (0.24 -> 0.46)
+  // CAPABILITIES FLOW
+  // Pair 1: Mobile Development & Web Development (0.16 -> 0.30)
   // =========================================================================
   if (rockCap1 && rockCap2) {
-    // Flow in from Top to Center
     tl2.to(
       [rockCap1, rockCap2],
-      { opacity: 1, y: 0, x: 0, xPercent: 0, yPercent: -50, scale: 1.0, filter: 'blur(0px)', duration: 0.10, ease: 'power2.out' },
-      0.24
+      { opacity: 1, y: 0, x: 0, xPercent: 0, yPercent: -50, scale: 1.0, filter: 'blur(0px)', duration: 0.08, ease: 'power2.out' },
+      0.16
     );
-
-    // Flow out from Center to Bottom
     tl2.to(
       [rockCap1, rockCap2],
-      { opacity: 0, y: 260, x: 0, xPercent: 0, yPercent: -50, scale: 0.94, filter: 'blur(8px)', duration: 0.06, ease: 'power2.in' },
+      { opacity: 0, y: 260, x: 0, xPercent: 0, yPercent: -50, scale: 0.94, filter: 'blur(8px)', duration: 0.05, ease: 'power2.in' },
+      0.26
+    );
+  }
+
+  // Pair 2: Custom Software & SaaS Products (0.32 -> 0.46)
+  if (rockCap3 && rockCap4) {
+    tl2.to(
+      [rockCap3, rockCap4],
+      { opacity: 1, y: 0, x: 0, xPercent: 0, yPercent: -50, scale: 1.0, filter: 'blur(0px)', duration: 0.08, ease: 'power2.out' },
+      0.32
+    );
+    tl2.to(
+      [rockCap3, rockCap4],
+      { opacity: 0, y: 260, x: 0, xPercent: 0, yPercent: -50, scale: 0.94, filter: 'blur(8px)', duration: 0.05, ease: 'power2.in' },
       0.42
     );
   }
 
-  // =========================================================================
-  // Pair 2: Custom Software & SaaS Products
-  // Flow in from Top -> Settle in Center -> Flow out to Bottom (0.48 -> 0.70)
-  // =========================================================================
-  if (rockCap3 && rockCap4) {
-    // Flow in from Top to Center
+  // Pair 3: AI Automation & Digital Marketing (0.48 -> 0.62)
+  if (rockCap5 && rockCap6) {
     tl2.to(
-      [rockCap3, rockCap4],
-      { opacity: 1, y: 0, x: 0, xPercent: 0, yPercent: -50, scale: 1.0, filter: 'blur(0px)', duration: 0.10, ease: 'power2.out' },
+      [rockCap5, rockCap6],
+      { opacity: 1, y: 0, x: 0, xPercent: 0, yPercent: -50, scale: 1.0, filter: 'blur(0px)', duration: 0.08, ease: 'power2.out' },
       0.48
     );
-
-    // Flow out from Center to Bottom
     tl2.to(
-      [rockCap3, rockCap4],
-      { opacity: 0, y: 260, x: 0, xPercent: 0, yPercent: -50, scale: 0.94, filter: 'blur(8px)', duration: 0.06, ease: 'power2.in' },
-      0.66
+      [rockCap5, rockCap6],
+      { opacity: 0, y: 260, x: 0, xPercent: 0, yPercent: -50, scale: 0.94, filter: 'blur(8px)', duration: 0.05, ease: 'power2.in' },
+      0.58
     );
   }
 
-  // =========================================================================
-  // Pair 3: AI Automation & Digital Marketing
-  // Flow in from Top -> Settle in Center -> Flow out to Bottom (0.72 -> 0.94)
-  // =========================================================================
-  if (rockCap5 && rockCap6) {
-    // Flow in from Top to Center
-    tl2.to(
-      [rockCap5, rockCap6],
-      { opacity: 1, y: 0, x: 0, xPercent: 0, yPercent: -50, scale: 1.0, filter: 'blur(0px)', duration: 0.10, ease: 'power2.out' },
-      0.72
-    );
+  const rockServicesTopBar = document.getElementById('rock-services-top-bar');
+  if (rockServicesTopBar) {
+    gsap.set(rockServicesTopBar, { opacity: 1, visibility: 'visible' });
+  }
 
-    // Flow out from Center to Bottom
-    tl2.to(
-      [rockCap5, rockCap6],
-      { opacity: 0, y: 260, x: 0, xPercent: 0, yPercent: -50, scale: 0.94, filter: 'blur(8px)', duration: 0.06, ease: 'power2.in' },
-      0.88
+  // Vertical strips cascade down after cards flow out (covers screen in pure white completely by 0.74)
+  if (rockServicesTopBar) {
+    tl2.fromTo(
+      rockServicesTopBar,
+      { opacity: 1, visibility: 'visible' },
+      { opacity: 0, visibility: 'hidden', duration: 0.04, ease: 'power2.in' },
+      0.60
     );
   }
 
-  // Vertical strips cascade down after cards flow out (covers screen in pure white)
   if (verticalStrips2.length > 0) {
     tl2.fromTo(
       verticalStrips2,
@@ -894,18 +855,151 @@ function setupDualScrollTriggers() {
       {
         yPercent: 0,
         stagger: {
-          each: 0.015,
+          each: 0.010,
           from: 'start'
         },
-        duration: 0.08,
+        duration: 0.05,
         ease: 'power2.inOut'
       },
-      0.92
+      0.64
     );
   }
 
-  // Pad end of timeline so user seamlessly transitions on white screen
-  tl2.set({}, {}, 1.0);
+  // =========================================================================
+  // SCROLL-DRIVEN ROADMAP ANIMATION: BRIEF TO LAUNCH -> OUR PROCESS -> CARDS & LINES
+  // 100% Scroll-Driven Choreography
+  // =========================================================================
+  if (processOverlay) {
+    tl2.set(processOverlay, { visibility: 'visible', pointerEvents: 'auto' }, 0.75);
+    tl2.to(processOverlay, { opacity: 1, duration: 0.01, ease: 'none' }, 0.75);
+  }
+
+  // 1. Reveal "Brief to Launch"
+  if (processMainTitle) {
+    tl2.fromTo(
+      processMainTitle,
+      { opacity: 0, y: 30, filter: 'blur(8px)' },
+      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.035, ease: 'power2.out' },
+      0.76
+    );
+  }
+
+  // 2. Reveal "Our Process"
+  if (processSubtitle) {
+    tl2.fromTo(
+      processSubtitle,
+      { opacity: 0, y: 20, filter: 'blur(6px)' },
+      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.035, ease: 'power2.out' },
+      0.79
+    );
+  }
+
+  // 3. Reveal Card 01 (Discover)
+  if (processCard1) {
+    tl2.fromTo(
+      processCard1,
+      { opacity: 0, scale: 0.90, y: 25, filter: 'blur(6px)' },
+      { opacity: 1, scale: 1.0, y: 0, filter: 'blur(0px)', duration: 0.035, ease: 'back.out(1.4)' },
+      0.82
+    );
+  }
+
+  // 4. Draw Organic Curvy Connecting Line 1 -> 2
+  if (connectorCurve1) {
+    tl2.fromTo(
+      connectorCurve1,
+      { strokeDashoffset: 125 },
+      { strokeDashoffset: 0, duration: 0.035, ease: 'none' },
+      0.855
+    );
+  }
+  if (connectorDot1) {
+    tl2.fromTo(
+      connectorDot1,
+      { scale: 0 },
+      { scale: 1, duration: 0.02, ease: 'back.out(2)' },
+      0.880
+    );
+  }
+
+  // 5. Reveal Card 02 (Design)
+  if (processCard2) {
+    tl2.fromTo(
+      processCard2,
+      { opacity: 0, scale: 0.90, y: 25, filter: 'blur(6px)' },
+      { opacity: 1, scale: 1.0, y: 0, filter: 'blur(0px)', duration: 0.035, ease: 'back.out(1.4)' },
+      0.885
+    );
+  }
+
+  // 6. Draw Organic Curvy Connecting Line 2 -> 3
+  if (connectorCurve2) {
+    tl2.fromTo(
+      connectorCurve2,
+      { strokeDashoffset: 125 },
+      { strokeDashoffset: 0, duration: 0.035, ease: 'none' },
+      0.920
+    );
+  }
+  if (connectorDot2) {
+    tl2.fromTo(
+      connectorDot2,
+      { scale: 0 },
+      { scale: 1, duration: 0.02, ease: 'back.out(2)' },
+      0.945
+    );
+  }
+
+  // 7. Reveal Card 03 (Build)
+  if (processCard3) {
+    tl2.fromTo(
+      processCard3,
+      { opacity: 0, scale: 0.90, y: 25, filter: 'blur(6px)' },
+      { opacity: 1, scale: 1.0, y: 0, filter: 'blur(0px)', duration: 0.035, ease: 'back.out(1.4)' },
+      0.950
+    );
+  }
+
+  // 8. Draw Organic Curvy Connecting Line 3 -> 4
+  if (connectorCurve3) {
+    tl2.fromTo(
+      connectorCurve3,
+      { strokeDashoffset: 125 },
+      { strokeDashoffset: 0, duration: 0.035, ease: 'none' },
+      0.985
+    );
+  }
+  if (connectorDot3) {
+    tl2.fromTo(
+      connectorDot3,
+      { scale: 0 },
+      { scale: 1, duration: 0.02, ease: 'back.out(2)' },
+      1.010
+    );
+  }
+
+  // 9. Reveal Card 04 (Launch)
+  if (processCard4) {
+    tl2.fromTo(
+      processCard4,
+      { opacity: 0, scale: 0.90, y: 25, filter: 'blur(6px)' },
+      { opacity: 1, scale: 1.0, y: 0, filter: 'blur(0px)', duration: 0.035, ease: 'back.out(1.4)' },
+      1.015
+    );
+  }
+
+  // 10. Technology Marquee Overlay emerges seamlessly at the bottom
+  if (techMarquee2) {
+    tl2.fromTo(
+      techMarquee2,
+      { opacity: 0, y: 25, filter: 'blur(6px)' },
+      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.04, ease: 'power2.out' },
+      1.05
+    );
+  }
+
+  // Settle at end of sequence so user comfortably explores the complete roadmap
+  tl2.set({}, {}, 1.12);
 
   ScrollTrigger.refresh();
 }
@@ -929,6 +1023,39 @@ function initParticleShowcase() {
   if (canvas3) new ParticleSystem(canvas3, 'spark-burst');
 }
 
+function initMobileNavigation() {
+  const hamburger = document.getElementById('nav-hamburger');
+  const overlay = document.getElementById('mobile-nav-overlay');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (!hamburger || !overlay) return;
+
+  const toggleMenu = (open) => {
+    const shouldOpen = typeof open === 'boolean' ? open : !hamburger.classList.contains('active');
+    hamburger.classList.toggle('active', shouldOpen);
+    overlay.classList.toggle('open', shouldOpen);
+    hamburger.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+    document.body.style.overflow = shouldOpen ? 'hidden' : '';
+  };
+
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      toggleMenu(false);
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) {
+      toggleMenu(false);
+    }
+  });
+}
+
 /* ==========================================================================
    INITIALIZE ON PAGE LOAD
    ========================================================================== */
@@ -939,4 +1066,5 @@ window.addEventListener('DOMContentLoaded', () => {
   initRotatingWords();
   initHeroSequenceParticles();
   initParticleShowcase();
+  initMobileNavigation();
 });
