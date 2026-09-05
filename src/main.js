@@ -194,7 +194,7 @@ async function preloadAllSequences() {
   const totalFrames = CONFIG.seq1.frameCount + CONFIG.seq2.frameCount;
   let totalLoaded = 0;
 
-  statusText.textContent = `CACHING ${totalFrames} 1080P WEBP FRAMES...`;
+  if (statusText) statusText.textContent = 'LOADING...';
 
   const loadSequence = (seqConfig, seqState, seqNum) => {
     return new Promise((resolve) => {
